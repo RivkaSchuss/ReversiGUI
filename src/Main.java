@@ -1,11 +1,8 @@
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
-import javafx.scene.text.Font;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 
@@ -13,14 +10,17 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        //Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Reversi");
-        Label lbl = new Label("Hello World!");
-        lbl.setFont(new Font("Arial", 30));
-        StackPane root = new StackPane();
-        root.getChildren().add(lbl);
-        primaryStage.setScene(new Scene(root, 300, 275));
-        primaryStage.show();
+        try {
+            FXMLLoader loader = new FXMLLoader((ClassLoader.getSystemClassLoader().getResource("menu.fxml")));
+            GridPane root = loader.load();
+            MenuController controller = loader.getController();
+            Scene scene = new Scene(root, 400, 350);
+            primaryStage.setTitle("Reversi");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {

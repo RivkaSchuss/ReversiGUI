@@ -1,5 +1,4 @@
 
-import sample.Location;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +20,7 @@ public class DefaultGameLogic implements GameLogic {
         boolean moveCompleted = false;
         while (!moveCompleted) {
             l = 0;
-            List<sample.Location> moves;
+            List<Location> moves;
             moves = getPossibleMoves(board.getTable(), board.getSize());
             if (moves.size() == 0) {
                 running -= 1;
@@ -78,20 +77,20 @@ public class DefaultGameLogic implements GameLogic {
         }
     }
 
-    public List<sample.Location> clearMoveArea(sample.Cell[][] table, int size, int rowPos, int colPos, int status) {
+    public List<Location> clearMoveArea(Cell[][] table, int size, int rowPos, int colPos, int status) {
         int l = 0;
-        List<sample.Location> currentOptions = new ArrayList<>();
+        List<Location> currentOptions = new ArrayList<>();
         if (rowPos - 2 > 0 || rowPos + 2 <= size) {
             //checking the upper side
             if (rowPos - 2 > 0) {
                 if (table[rowPos - 1][colPos].getStatus() != otherTurn
                         && table[rowPos - 1][colPos].getStatus() > 0) {
                     if (table[rowPos - 2][colPos].getStatus() == status) {
-                        sample.Location option = new sample.Location(rowPos - 2, colPos);
+                        Location option = new Location(rowPos - 2, colPos);
                         currentOptions.add(option);
                         l++;
                     } else {
-                        sample.Location option = getFromUp(table, size, rowPos - 1, colPos, status);
+                        Location option = getFromUp(table, size, rowPos - 1, colPos, status);
                         if (option.getRow() != 0) {
                             currentOptions.add(option);
                             l++;
@@ -104,11 +103,11 @@ public class DefaultGameLogic implements GameLogic {
                 if (table[rowPos + 1][colPos].getStatus() != otherTurn
                         && table[rowPos + 1][colPos].getStatus() > 0) {
                     if (table[rowPos + 2][colPos].getStatus() == status) {
-                        sample.Location option = new sample.Location(rowPos + 2, colPos);
+                        Location option = new Location(rowPos + 2, colPos);
                         currentOptions.add(option);
                         l++;
                     } else {
-                        sample.Location option = getFromDown(table, size, rowPos + 1, colPos, status);
+                        Location option = getFromDown(table, size, rowPos + 1, colPos, status);
                         if (option.getRow() != 0) {
                             currentOptions.add(option);
                             l++;
@@ -125,11 +124,11 @@ public class DefaultGameLogic implements GameLogic {
                 if (table[rowPos - 1][colPos - 1].getStatus() != otherTurn
                         && table[rowPos - 1][colPos - 1].getStatus() > 0) {
                     if (table[rowPos - 2][colPos - 2].getStatus() == status) {
-                        sample.Location option = new sample.Location(rowPos - 2, colPos - 2);
+                        Location option = new Location(rowPos - 2, colPos - 2);
                         currentOptions.add(option);
                         l++;
                     } else {
-                        sample.Location option = getFromUpLeft(table, size, rowPos - 1, colPos - 1, status);
+                        Location option = getFromUpLeft(table, size, rowPos - 1, colPos - 1, status);
                         if (option.getRow() != 0) {
                             currentOptions.add(option);
                             l++;
@@ -142,11 +141,11 @@ public class DefaultGameLogic implements GameLogic {
                 if (table[rowPos - 1][colPos + 1].getStatus() != otherTurn
                         && table[rowPos - 1][colPos + 1].getStatus() > 0) {
                     if (table[rowPos - 2][colPos + 2].getStatus() == status) {
-                        sample.Location option = new sample.Location(rowPos - 2, colPos + 2);
+                        Location option = new Location(rowPos - 2, colPos + 2);
                         currentOptions.add(option);
                         l++;
                     } else {
-                        sample.Location option = getFromUpRight(table, size, rowPos - 1, colPos + 1, status);
+                        Location option = getFromUpRight(table, size, rowPos - 1, colPos + 1, status);
                         if (option.getRow() != 0) {
                             currentOptions.add(option);
                             l++;
@@ -159,15 +158,13 @@ public class DefaultGameLogic implements GameLogic {
                 if (table[rowPos + 1][colPos - 1].getStatus() != otherTurn
                         && table[rowPos + 1][colPos - 1].getStatus() > 0) {
                     if (table[rowPos + 2][colPos - 2].getStatus() == status) {
-                        sample.Location option = new sample.Location(rowPos + 2, colPos - 2);
+                        Location option = new Location(rowPos + 2, colPos - 2);
                         currentOptions.add(option);
-                        //delete option;
                         l++;
                     } else {
-                        sample.Location option = getFromDownLeft(table, size, rowPos + 1, colPos - 1, status);
+                        Location option = getFromDownLeft(table, size, rowPos + 1, colPos - 1, status);
                         if (option.getRow() != 0) {
                             currentOptions.add(option);
-                            //delete option;
                             l++;
                         }
                     }
@@ -178,12 +175,11 @@ public class DefaultGameLogic implements GameLogic {
                 if (table[rowPos + 1][colPos + 1].getStatus() != otherTurn
                         && table[rowPos + 1][colPos + 1].getStatus() > 0) {
                     if (table[rowPos + 2][colPos + 2].getStatus() == status) {
-                        sample.Location option = new sample.Location(rowPos + 2, colPos + 2);
+                        Location option = new Location(rowPos + 2, colPos + 2);
                         currentOptions.add(option);
-                        //delete option;
                         l++;
                     } else {
-                        sample.Location option = getFromDownRight(table, size, rowPos + 1, colPos + 1, status);
+                        Location option = getFromDownRight(table, size, rowPos + 1, colPos + 1, status);
                         if (option.getRow() != 0) {
                             currentOptions.add(option);
                             //delete option;
@@ -200,12 +196,12 @@ public class DefaultGameLogic implements GameLogic {
                 if (table[rowPos][colPos - 1].getStatus() != otherTurn
                         && table[rowPos][colPos - 1].getStatus() > 0) {
                     if (table[rowPos][colPos - 2].getStatus() == status) {
-                        sample.Location option = new sample.Location(rowPos, colPos - 2);
+                        Location option = new Location(rowPos, colPos - 2);
                         currentOptions.add(option);
                         //delete option;
                         l++;
                     } else {
-                        sample.Location option = getFromLeft(table, size, rowPos, colPos - 1, status);
+                        Location option = getFromLeft(table, size, rowPos, colPos - 1, status);
                         if (option.getRow() != 0) {
                             currentOptions.add(option);
                             //delete option;
@@ -219,11 +215,11 @@ public class DefaultGameLogic implements GameLogic {
                 if (table[rowPos][colPos + 1].getStatus() != otherTurn
                         && table[rowPos][colPos + 1].getStatus() > 0) {
                     if (table[rowPos][colPos + 2].getStatus() == status) {
-                        sample.Location option = new sample.Location(rowPos, colPos + 2);
+                        Location option = new Location(rowPos, colPos + 2);
                         currentOptions.add(option);
                         l++;
                     } else {
-                        sample.Location option = getFromRight(table, size, rowPos, colPos + 1, status);
+                        Location option = getFromRight(table, size, rowPos, colPos + 1, status);
                         if (option.getRow() != 0) {
                             currentOptions.add(option);
                             l++;
@@ -240,7 +236,7 @@ public class DefaultGameLogic implements GameLogic {
         }
     }
 
-    public int checkScore(sample.Cell[][] table, int size) {
+    public int checkScore(Cell[][] table, int size) {
         int counterBlack = 0, counterWhite = 0;
         for (int i = 0; i <= size; ++i) {
             for (int j = 0; j <= size; ++j) {
@@ -273,12 +269,12 @@ public class DefaultGameLogic implements GameLogic {
         return this.turn;
     }
 
-    public List<sample.Location> getPossibleMoves(sample.Cell[][] table, int size) {
+    public List<Location> getPossibleMoves(Cell[][] table, int size) {
         //changed dynamically to be the options for the current
         // player's cell in the for loop.
-        List<sample.Location> subOptions = new ArrayList<>();
+        List<Location> subOptions = new ArrayList<>();
         //ultimately will store all of the options for moves.
-        List<sample.Location> options = new ArrayList<>();
+        List<Location> options = new ArrayList<>();
         for (int i = 0; i <= size; i++) {
             for (int j = 0; j <= size; j++) {
                 if (table[i][j].getStatus() == otherTurn) {
@@ -297,7 +293,7 @@ public class DefaultGameLogic implements GameLogic {
         if (options.size() == 0) {
             return options;
         } else {
-            sample.Location option = new sample.Location(0, 0);
+            Location option = new Location(0, 0);
             options.add(option);
             return options;
         }
@@ -395,7 +391,7 @@ public class DefaultGameLogic implements GameLogic {
     }
 
 
-    public sample.Location removeOneDead(Place place, int row, int col, Board board) {
+    public Location removeOneDead(Place place, int row, int col, Board board) {
         int rowDead = 0, colDead = 0;
         switch(place) {
             case up:
@@ -447,12 +443,12 @@ public class DefaultGameLogic implements GameLogic {
                         updateStatus(otherTurn);
                 break;
         }
-        Location location = new sample.Location(rowDead, colDead);
+        Location location = new Location(rowDead, colDead);
         return location;
     }
 
 
-    public boolean moveExist(List<sample.Location> options, sample.Location location) {
+    public boolean moveExist(List<Location> options, Location location) {
         for (int i = 0; i < options.size(); i++) {
             if (options.get(i).getRow() == location.getRow() &&
                     options.get(i).getCol() == location.getCol()) {
@@ -462,129 +458,129 @@ public class DefaultGameLogic implements GameLogic {
         return false;
     }
 
-    public Location getFromUp(sample.Cell[][] table, int size, int rowPos, int colPos, int status) {
+    public Location getFromUp(Cell[][] table, int size, int rowPos, int colPos, int status) {
         if(rowPos - 1 == 0) {
-            return new sample.Location(0, 0);
+            return new Location(0, 0);
         }
         int value = table[rowPos - 1][colPos].getStatus();
         if (value == status) {
-            sample.Location option = new sample.Location(rowPos - 1, colPos);
+            Location option = new Location(rowPos - 1, colPos);
             return option;
         }
         if (value == otherTurn) {
-            return new sample.Location(0, 0);
+            return new Location(0, 0);
         }
         return getFromUp(table, size, rowPos - 1, colPos, status);
     }
 
 
-    public Location getFromUpRight(sample.Cell[][] table, int size, int rowPos, int colPos, int status) {
+    public Location getFromUpRight(Cell[][] table, int size, int rowPos, int colPos, int status) {
         if(rowPos - 1 == 0 || colPos + 1 > size) {
-            return new sample.Location(0, 0);
+            return new Location(0, 0);
         }
         int value = table[rowPos - 1][colPos + 1].getStatus();
         if (value == status) {
-            sample.Location option = new sample.Location(rowPos - 1, colPos + 1);
+            Location option = new Location(rowPos - 1, colPos + 1);
             return option;
         }
         if (value == otherTurn) {
-            return new sample.Location(0, 0);
+            return new Location(0, 0);
         }
         return getFromUpRight(table, size, rowPos - 1, colPos + 1, status);
     }
 
 
-    public Location getFromRight(sample.Cell[][] table, int size, int rowPos, int colPos, int status) {
+    public Location getFromRight(Cell[][] table, int size, int rowPos, int colPos, int status) {
         if(colPos + 1 > size) {
-            return new sample.Location(0, 0);
+            return new Location(0, 0);
         }
         int value = table[rowPos][colPos + 1].getStatus();
         if (value == status) {
-            sample.Location option = new sample.Location(rowPos, colPos + 1);
+            Location option = new Location(rowPos, colPos + 1);
             return option;
         }
         if (value == otherTurn) {
-            return new sample.Location(0, 0);
+            return new Location(0, 0);
         }
         return getFromRight(table, size, rowPos, colPos + 1, status);
     }
 
 
-    public Location getFromDownRight(sample.Cell[][] table, int size, int rowPos, int colPos, int status) {
+    public Location getFromDownRight(Cell[][] table, int size, int rowPos, int colPos, int status) {
         if(rowPos + 1 > size || colPos + 1 > size) {
-            return new sample.Location(0, 0);
+            return new Location(0, 0);
         }
         int value = table[rowPos + 1][colPos + 1].getStatus();
         if (value == status) {
-            sample.Location option = new sample.Location(rowPos + 1, colPos + 1);
+            Location option = new Location(rowPos + 1, colPos + 1);
             return option;
         }
         if (value == otherTurn) {
-            return new sample.Location(0, 0);
+            return new Location(0, 0);
         }
         return getFromDownRight(table, size, rowPos + 1, colPos + 1, status);
     }
 
 
-    public Location getFromDown(sample.Cell[][] table, int size, int rowPos, int colPos, int status) {
+    public Location getFromDown(Cell[][] table, int size, int rowPos, int colPos, int status) {
         if(rowPos + 1 > size) {
-            return new sample.Location(0, 0);
+            return new Location(0, 0);
         }
         int value = table[rowPos + 1][colPos].getStatus();
         if (value == status) {
-            sample.Location option = new sample.Location(rowPos + 1, colPos);
+            Location option = new Location(rowPos + 1, colPos);
             return option;
         }
         if (value == otherTurn) {
-            return new sample.Location(0, 0);
+            return new Location(0, 0);
         }
         return getFromDown(table, size, rowPos + 1, colPos, status);
     }
 
 
-    public Location getFromDownLeft(sample.Cell[][]table, int size, int rowPos, int colPos, int status) {
+    public Location getFromDownLeft(Cell[][]table, int size, int rowPos, int colPos, int status) {
         if(rowPos + 1 > size || colPos - 1 == 0) {
-            return new sample.Location(0, 0);
+            return new Location(0, 0);
         }
         int value = table[rowPos + 1][colPos - 1].getStatus();
         if (value == status) {
-            sample.Location option = new sample.Location(rowPos + 1, colPos - 1);
+            Location option = new Location(rowPos + 1, colPos - 1);
             return option;
         }
         if (value == otherTurn) {
-            return new sample.Location(0, 0);
+            return new Location(0, 0);
         }
         return getFromDownLeft(table, size, rowPos + 1, colPos - 1, status);
     }
 
 
-    public Location getFromLeft(sample.Cell[][] table, int size, int rowPos, int colPos, int status) {
+    public Location getFromLeft(Cell[][] table, int size, int rowPos, int colPos, int status) {
         if(colPos - 1 == 0) {
-            return new sample.Location(0, 0);
+            return new Location(0, 0);
         }
         int value = table[rowPos][colPos - 1].getStatus();
         if (value == status) {
-            sample.Location option = new sample.Location(rowPos, colPos - 1);
+            Location option = new Location(rowPos, colPos - 1);
             return option;
         }
         if (value == otherTurn) {
-            return new sample.Location(0, 0);
+            return new Location(0, 0);
         }
         return getFromLeft(table, size, rowPos, colPos - 1, status);
     }
 
 
-    public Location getFromUpLeft(sample.Cell[][] table, int size, int rowPos, int colPos, int status) {
+    public Location getFromUpLeft(Cell[][] table, int size, int rowPos, int colPos, int status) {
         if(rowPos - 1 == 0 || colPos - 1 == 0) {
-            return new sample.Location(0, 0);
+            return new Location(0, 0);
         }
         int value = table[rowPos - 1][colPos - 1].getStatus();
         if (value == status) {
-            sample.Location option = new sample.Location(rowPos - 1, colPos - 1);
+            Location option = new Location(rowPos - 1, colPos - 1);
             return option;
         }
         if (value == otherTurn) {
-            return new sample.Location(0, 0);
+            return new Location(0, 0);
         }
         return getFromUpLeft(table, size, rowPos - 1, colPos - 1, status);
     }

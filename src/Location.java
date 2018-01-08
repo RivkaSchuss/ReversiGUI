@@ -1,4 +1,3 @@
-package sample;
 
 public class Location {
     private int row;

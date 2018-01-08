@@ -1,5 +1,3 @@
-package sample;
-
 
 
 public class Game {
@@ -15,7 +13,7 @@ public class Game {
         while (logic.isRunning()) {
             board.print();
             logic.playOneTurn(board);
-            if (logic.getTurn() == sample.Type.BLACK) {
+            if (logic.getTurn() == Type.BLACK) {
                 logic.setTurn(Type.WHITE);
             } else {
                 logic.setTurn(Type.BLACK);

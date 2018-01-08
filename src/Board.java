@@ -1,15 +1,14 @@
-package sample;
 
 public class Board {
     private int size;
-    private Cell table[][];
+    private sample.Cell table[][];
 
     public Board(int size) {
         this.size = size;
-        this.table = new Cell[size + 1][size + 1];
+        this.table = new sample.Cell[size + 1][size + 1];
         for (int i = 0; i < size + 1; i++) {
             for (int j = 0; j < size + 1; j++) {
-                table[i][j] = new Cell();
+                table[i][j] = new sample.Cell();
                 table[i][j].setSpot(i, j);
             }
         }
@@ -54,7 +53,7 @@ public class Board {
         }
     }
 
-    public Cell[][] getTable() {
+    public sample.Cell[][] getTable() {
         return this.table;
     }
 

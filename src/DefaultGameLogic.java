@@ -5,11 +5,14 @@ import java.util.Scanner;
 
 
 public class DefaultGameLogic implements GameLogic {
-    private Type turn = Type.BLACK;
+    private Type turn;
     private Scanner scanner = new Scanner(System.in);
     private int running = 2;
     private int otherTurn = 1;
 
+    public DefaultGameLogic(Type firstPlayer) {
+        this.turn = firstPlayer;
+    }
     public boolean isRunning() {
         return this.running > 0;
     }

@@ -9,7 +9,6 @@
 <GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.121" fx:controller="GameController">
     <VBox spacing = "10" id = "gameControl" alignment="CENTER"
           GridPane.rowIndex = "0">
-    <Button minHeight="5" minWidth="5"  onAction="#hi" text="Quick Start" />
     </VBox>
 </GridPane>
 

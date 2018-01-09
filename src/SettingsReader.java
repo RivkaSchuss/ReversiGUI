@@ -9,16 +9,20 @@ public class SettingsReader {
     private static final String size = "size";
 
     public SettingsReader() {
-        SettingsReader.fromReader();
+        //SettingsReader.fromReader();
     }
 
     public static GameSettings fromReader() {
         String thisLine;
         Map<String, String> infoMap = new TreeMap<>();
-        InputStream is = ClassLoader.getSystemClassLoader().getResourceAsStream("settings");
-        Reader reader = new InputStreamReader(is);
-        BufferedReader br = new BufferedReader(reader);
+        InputStream is = null;
+        Reader reader = null;
+        BufferedReader br = null;
         try {
+            System.out.println("read");
+            is = ClassLoader.getSystemClassLoader().getResourceAsStream("settings");
+            reader = new InputStreamReader(is);
+            br = new BufferedReader(reader);
             while ((thisLine = br.readLine()) != null) {
                 if (thisLine.contains(firstPlayer)) {
                     int index = thisLine.indexOf(" ", thisLine.indexOf(firstPlayer) +
@@ -58,7 +62,18 @@ public class SettingsReader {
         } catch(IOException e) {
             e.printStackTrace();
         }
-        GameSettings settings = new GameSettings(infoMap);
-        return settings;
+        finally {
+            try {
+                if (reader != null) {
+                    reader.close();
+                }
+                if (br != null) {
+                    br.close();
+                }
+            }catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+        return new GameSettings(infoMap);
     }
 }

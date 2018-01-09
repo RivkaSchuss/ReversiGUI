@@ -14,7 +14,7 @@ public class Main extends Application {
             FXMLLoader loader = new FXMLLoader((ClassLoader.getSystemClassLoader().getResource("menu.fxml")));
             GridPane root = loader.load();
             MenuController controller = loader.getController();
-            SettingsReader reader = new SettingsReader();
+            //SettingsReader reader = new SettingsReader();
             Scene scene = new Scene(root, 400, 350);
             primaryStage.setTitle("Reversi");
             primaryStage.setScene(scene);

@@ -1,6 +1,5 @@
 import javafx.scene.paint.Color;
 
-import java.util.Iterator;
 import java.util.Map;
 
 public class GameSettings {
@@ -39,9 +38,9 @@ public class GameSettings {
             if (entry.getKey().equals("firstPlayer")) {
                 int playerInt = Integer.parseInt(entry.getValue());
                 if (playerInt == 1) {
-                    this.startPlayer = Type.BLACK;
+                    this.startPlayer = Type.FIRST;
                 } else if(playerInt == 2) {
-                    this.startPlayer = Type.WHITE;
+                    this.startPlayer = Type.SECOND;
                 }
             }
             if (entry.getKey().equals("diskColor1")) {

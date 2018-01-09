@@ -26,7 +26,7 @@ public class DefaultGameLogic implements GameLogic {
             moves = getPossibleMoves(board.getTable(), board.getSize());
             if (moves.size() == 0) {
                 running -= 1;
-                if (turn == Type.BLACK) {
+                if (turn == Type.FIRST) {
                     System.out.println("X: You have no possible moves!");
                     return;
                 } else {
@@ -35,7 +35,7 @@ public class DefaultGameLogic implements GameLogic {
                 }
             }
             running = 2;
-            if (turn == Type.BLACK) {
+            if (turn == Type.FIRST) {
                 System.out.println("X: It's your move.");
             } else {
                 System.out.println("O: It's your move.");
@@ -259,7 +259,7 @@ public class DefaultGameLogic implements GameLogic {
 
     public void setTurn(Type currentTurn) {
         this.turn = currentTurn;
-        if (currentTurn == Type.BLACK) {
+        if (currentTurn == Type.FIRST) {
             otherTurn = 1;
         } else {
             otherTurn = 2;
@@ -305,10 +305,10 @@ public class DefaultGameLogic implements GameLogic {
     public void flipDeadCell(int row, int col, Board board) {
         int boardSize = board.getSize();
         int player1 = -1, player2 = -1;
-        if (turn  == Type.BLACK) {
+        if (turn  == Type.FIRST) {
             player1 = 1;
             player2 = 2;
-        } else if (turn == Type.WHITE){
+        } else if (turn == Type.SECOND){
             player1 = 2;
             player2 = 1;
         }

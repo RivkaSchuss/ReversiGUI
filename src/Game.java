@@ -13,10 +13,10 @@ public class Game {
         while (logic.isRunning()) {
             board.print();
             logic.playOneTurn(board);
-            if (logic.getTurn() == Type.BLACK) {
-                logic.setTurn(Type.WHITE);
+            if (logic.getTurn() == Type.FIRST) {
+                logic.setTurn(Type.SECOND);
             } else {
-                logic.setTurn(Type.BLACK);
+                logic.setTurn(Type.FIRST);
             }
         }
         if (logic.checkScore(board.getTable(), board.getSize()) == 1) {

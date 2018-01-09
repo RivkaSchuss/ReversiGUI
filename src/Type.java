@@ -1,4 +1,4 @@
 
 public enum Type {
-    BLACK, WHITE
+    FIRST, SECOND
 }

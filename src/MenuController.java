@@ -19,12 +19,7 @@ public class MenuController {
 
     @FXML
     protected void startGame(ActionEvent event){
-        //loadFXML("game.fxml", event);
         GameSettings info = SettingsReader.fromReader();
-        System.out.println(info.boardSize());
-        System.out.println(info.disk1());
-        System.out.println(info.disk2());
-        System.out.println(info.startPlayer());
         int boardSize = info.boardSize();
         Color disk1 = info.disk1();
         Color disk2 = info.disk2();
@@ -45,8 +40,8 @@ public class MenuController {
             }
         }
         Label current = new Label("Current player: Black");
-        Label blackPlayer = new Label("Black player's score:");
-        Label whitePlayer = new Label("White player's score:");
+        Label blackPlayer = new Label("Black player's score: ");
+        Label whitePlayer = new Label("White player's score: ");
         gameStatus.getChildren().add(current);
         gameStatus.getChildren().add(blackPlayer);
         gameStatus.getChildren().add(whitePlayer);
@@ -59,13 +54,8 @@ public class MenuController {
 
     @FXML
     protected void startSettings(ActionEvent event){
-        loadFXML("settings.fxml", event);
-    }
-
-    @FXML
-    private void loadFXML(String fxml, ActionEvent event) {
         try {
-            Parent parent = FXMLLoader.load(getClass().getResource(fxml));
+            Parent parent = FXMLLoader.load(getClass().getResource("settings.fxml"));
             Scene scene = new Scene(parent, 400, 350);
             Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);

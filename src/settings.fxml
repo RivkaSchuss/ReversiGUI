@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ColorPicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -16,25 +18,30 @@
       <font>
          <Font size="18.0" />
       </font></Text>
+    <fx:define>
+        <ToggleGroup fx:id="players" />
+    </fx:define>
     <Label text="Board Size:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-    <TextField fx:id="boardSize" GridPane.columnIndex="1" GridPane.rowIndex="1" />
     <Label text="First Disk Color:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-    <TextField fx:id="disk1Color" GridPane.columnIndex="1" GridPane.rowIndex="2" />
     <Label text="Second Disk Color:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-    <TextField fx:id="disk2Color" GridPane.columnIndex="1" GridPane.rowIndex="3" />
     <Label text="First Player:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-    <Text fx:id="message" GridPane.columnIndex="0" GridPane.rowIndex="6" ></Text>
-    <HBox alignment="center" GridPane.columnIndex="1" GridPane.rowIndex="6">
+    <HBox alignment="center" GridPane.columnIndex="1" GridPane.rowIndex="7">
         <Button onAction="#apply" text="Done" />
     </HBox>
-   <CheckBox fx:id="player1" mnemonicParsing="false" text="Player 1" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-   <CheckBox fx:id="player2" mnemonicParsing="false" text="Player 2" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+   <RadioButton fx:id="player1" toggleGroup="$players" mnemonicParsing="false" text="Player 1" GridPane.columnIndex="1"
+                GridPane.rowIndex="4"/>
+   <RadioButton fx:id="player2" toggleGroup="$players" mnemonicParsing="false" text="Player 2"  GridPane.columnIndex="1"
+                GridPane.rowIndex="5" />
+   <ChoiceBox fx:id="choiceBox" prefHeight="27.0" prefWidth="169.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+   <ColorPicker fx:id="disk1Color" prefHeight="27.0" prefWidth="169.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+   <ColorPicker fx:id="disk2Color" prefHeight="27.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
       <ColumnConstraints />
    </columnConstraints>
    <rowConstraints>
+      <RowConstraints />
       <RowConstraints />
       <RowConstraints />
       <RowConstraints />

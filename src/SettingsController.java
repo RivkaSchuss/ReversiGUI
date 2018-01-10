@@ -4,8 +4,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -16,17 +16,15 @@ import java.util.TreeMap;
 public class SettingsController {
     private static final String fileName = "src/settings";
     @FXML
-    private CheckBox player1;
+    private RadioButton player1;
     @FXML
-    private CheckBox player2;
+    private RadioButton player2;
     @FXML
-    private Text message;
+    private ColorPicker disk1Color;
     @FXML
-    private TextField disk1Color;
+    private ColorPicker disk2Color;
     @FXML
-    private TextField disk2Color;
-    @FXML
-    private TextField boardSize;
+    private ChoiceBox<Integer> choiceBox;
     @FXML
     private  Map<String,String> infoMap;
     private Boolean legalInput;
@@ -34,17 +32,17 @@ public class SettingsController {
     @FXML
     protected void initialize(){
         infoMap = new TreeMap<>();
+        choiceBox.getItems().addAll(4, 8, 12, 16, 20);
+        choiceBox.setValue(8);
+        disk1Color.setValue(Color.BLACK);
+        disk2Color.setValue(Color.WHITE);
+        player1.setSelected(true);
     }
 
     @FXML
     protected void apply(ActionEvent event) {
         int playerChosen = 0;
-        if (player1.isSelected() && player2.isSelected()) {
-            message.setText("Please select only one player.");
-        } else if(!player1.isSelected() && !player2.isSelected()) {
-            message.setText("Please choose one player.");
-        }
-        else if (player1.isSelected()) {
+        if (player1.isSelected()) {
             playerChosen = 1;
             legalInput = true;
         } else if (player2.isSelected()) {
@@ -52,9 +50,9 @@ public class SettingsController {
             legalInput = true;
         }
         infoMap.put("firstPlayer", Integer.toString(playerChosen));
-        infoMap.put("diskColor1", disk1Color.getText());
-        infoMap.put("diskColor2", disk2Color.getText());
-        infoMap.put("size", boardSize.getText());
+        infoMap.put("diskColor1", disk1Color.getValue().toString());
+        infoMap.put("diskColor2", disk2Color.getValue().toString());
+        infoMap.put("size", choiceBox.getValue().toString());
         if (legalInput) {
             writeToFile();
             try {
@@ -72,25 +70,20 @@ public class SettingsController {
 
     @FXML
     private void writeToFile() {
-        BufferedWriter writer = null;
+        PrintWriter writer = null;
         try {
-            System.out.println("write");
-            writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fileName)));
+            writer = new PrintWriter(new File(fileName));
             for (Map.Entry<String, String> entry : this.infoMap.entrySet()) {
                 writer.write(entry.getKey());
                 writer.write(" ");
                 writer.write(entry.getValue());
-                writer.newLine();
+                writer.println();
             }
         }catch(IOException e) {
             e.printStackTrace();
         } finally {
-            try {
-                if (writer != null) {
-                    writer.close();
-                }
-            }catch (IOException ex) {
-                ex.printStackTrace();
+            if (writer != null) {
+                writer.close();
             }
         }
     }

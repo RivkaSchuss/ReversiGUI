@@ -1,4 +1,4 @@
-diskColor1 Black
-diskColor2 White
+diskColor1 0x000000ff
+diskColor2 0xffffffff
 firstPlayer 1
 size 8

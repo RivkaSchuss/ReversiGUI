@@ -1,6 +1,7 @@
 import java.io.*;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.stream.Stream;
 
 public class SettingsReader {
     private static final String firstPlayer = "firstPlayer";
@@ -15,14 +16,9 @@ public class SettingsReader {
     public static GameSettings fromReader() {
         String thisLine;
         Map<String, String> infoMap = new TreeMap<>();
-        InputStream is = null;
-        Reader reader = null;
         BufferedReader br = null;
         try {
-            System.out.println("read");
-            is = ClassLoader.getSystemClassLoader().getResourceAsStream("settings");
-            reader = new InputStreamReader(is);
-            br = new BufferedReader(reader);
+            br = new BufferedReader(new FileReader(new File("src/settings")));
             while ((thisLine = br.readLine()) != null) {
                 if (thisLine.contains(firstPlayer)) {
                     int index = thisLine.indexOf(" ", thisLine.indexOf(firstPlayer) +
@@ -64,9 +60,6 @@ public class SettingsReader {
         }
         finally {
             try {
-                if (reader != null) {
-                    reader.close();
-                }
                 if (br != null) {
                     br.close();
                 }

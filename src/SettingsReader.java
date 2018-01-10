@@ -9,10 +9,6 @@ public class SettingsReader {
     private static final String diskColor2 = "diskColor2";
     private static final String size = "size";
 
-    public SettingsReader() {
-        //SettingsReader.fromReader();
-    }
-
     public static GameSettings fromReader() {
         String thisLine;
         Map<String, String> infoMap = new TreeMap<>();
@@ -20,15 +16,6 @@ public class SettingsReader {
         try {
             br = new BufferedReader(new FileReader(new File("src/settings")));
             while ((thisLine = br.readLine()) != null) {
-                if (thisLine.contains(firstPlayer)) {
-                    int index = thisLine.indexOf(" ", thisLine.indexOf(firstPlayer) +
-                            firstPlayer.length() + 1);
-                    if (index == -1) {
-                        index = thisLine.length();
-                    }
-                    infoMap.put(firstPlayer, thisLine.substring(thisLine.indexOf(firstPlayer)
-                            + firstPlayer.length() + 1, index));
-                }
                 if (thisLine.contains(diskColor1)) {
                     int index = thisLine.indexOf(" ", thisLine.indexOf(diskColor1) +
                             diskColor1.length() + 1);
@@ -56,7 +43,7 @@ public class SettingsReader {
                 }
             }
         } catch(IOException e) {
-            e.printStackTrace();
+            return null;
         }
         finally {
             try {

@@ -18,20 +18,12 @@
       <font>
          <Font size="18.0" />
       </font></Text>
-    <fx:define>
-        <ToggleGroup fx:id="players" />
-    </fx:define>
     <Label text="Board Size:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-    <Label text="First Disk Color:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-    <Label text="Second Disk Color:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-    <Label text="First Player:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-    <HBox alignment="center" GridPane.columnIndex="1" GridPane.rowIndex="7">
-        <Button onAction="#apply" text="Done" />
+    <Label text="First Player's Disk Color:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <Label text="Second Player's Disk Color:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+    <HBox alignment="center" GridPane.columnIndex="1" GridPane.rowIndex="4">
+        <Button onAction="#apply" text="Save Settings" />
     </HBox>
-   <RadioButton fx:id="player1" toggleGroup="$players" mnemonicParsing="false" text="Player 1" GridPane.columnIndex="1"
-                GridPane.rowIndex="4"/>
-   <RadioButton fx:id="player2" toggleGroup="$players" mnemonicParsing="false" text="Player 2"  GridPane.columnIndex="1"
-                GridPane.rowIndex="5" />
    <ChoiceBox fx:id="choiceBox" prefHeight="27.0" prefWidth="169.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
    <ColorPicker fx:id="disk1Color" prefHeight="27.0" prefWidth="169.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
    <ColorPicker fx:id="disk2Color" prefHeight="27.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />

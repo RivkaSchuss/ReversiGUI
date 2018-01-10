@@ -1,11 +1,22 @@
+import javafx.beans.value.ObservableValue;
 import javafx.scene.control.Button;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
 
-public class Board {
+public class Board extends GridPane {
     private int size;
     private Cell table[][];
+    private Color disk1;
+    private Color disk2;
 
-    public Board(int size) {
+    public Board(int size, Color disk1, Color disk2) {
         this.size = size;
+        this.disk1 = disk1;
+        this.disk2 = disk2;
         this.table = new Cell[size + 1][size + 1];
         for (int i = 0; i < size + 1; i++) {
             for (int j = 0; j < size + 1; j++) {
@@ -19,39 +30,26 @@ public class Board {
         table[size / 2 + 1][size / 2 + 1].updateStatus(2);
     }
 
-    public void print() {
-       System.out.print(" |");
-        for (int i = 0; i < size; i++) {
-            System.out.print(" " + (i + 1) + " |");
-        }
-        System.out.println();
-        System.out.print("--");
-        for (int j = 0; j < size; j++) {
-            System.out.print("----");
-        }
-        System.out.println();
-        for (int i = 1; i < size + 1; i++) {
-            System.out.print(i + "|");
-            for (int j = 1; j < size + 1; j++) {
-                //prints an x in the proper places
+    public void draw() {
+        this.getChildren().clear();
+        for (int i = 1; i <= size; i++) {
+            for (int j = 1; j <= size; j++) {
+                Rectangle rectangle = new Rectangle(600 / size,600 / size);
+                rectangle.setStroke(Color.BLACK);
+                rectangle.setFill(Color.rgb(37,109,140));
+                StackPane cell = new StackPane();
+                cell.getChildren().add(rectangle);
+                this.add(cell, i , j);
                 if (table[i][j].getStatus() == 1) {
-                    System.out.print(" X |");
-                }
-                //prints an o in the proper places
-                else if (table[i][j].getStatus() == 2) {
-                    System.out.print(" O |");
-                }
-                else {
-                    System.out.print( "   |");
+                    this.add(new Circle(cell.getWidth()/2, cell.getHeight()/2,
+                            300/size ,disk1), i, j);
+                } else if (table[i][j].getStatus() == 2) {
+                    this.add(new Circle(cell.getWidth()/2, cell.getHeight()/2,
+                            300/size ,disk2), i, j);
                 }
             }
-            System.out.println();
-            System.out.print("--");
-            for (int z = 0; z < size; z++) {
-                System.out.print("----");
-            }
-            System.out.println();
         }
+
     }
 
     public Cell[][] getTable() {

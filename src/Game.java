@@ -9,6 +9,8 @@ public class Game {
         this.logic = logic;
     }
 
+    /*
+
     public void run() {
         while (logic.isRunning()) {
             board.print();
@@ -19,12 +21,15 @@ public class Game {
                 logic.setTurn(Type.FIRST);
             }
         }
-        if (logic.checkScore(board.getTable(), board.getSize()) == 1) {
+        int blackScore = logic.checkScore(board.getTable(), board.getSize(), 1);
+        int whiteScore = logic.checkScore(board.getTable(), board.getSize(), 2);
+        if (blackScore > whiteScore) {
             System.out.println("X: Congrats, you win!");
-        } else if (logic.checkScore(board.getTable(), board.getSize()) == 2) {
+        } else if (whiteScore > blackScore) {
             System.out.println("O: Congrats, you win!");
         } else {
             System.out.println("It's a TIE!");
         }
     }
+    */
 }

@@ -6,7 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.*;
@@ -33,39 +32,35 @@ public class SettingsController {
     protected void initialize(){
         infoMap = new TreeMap<>();
         choiceBox.getItems().addAll(4, 8, 12, 16, 20);
-        choiceBox.setValue(8);
-        disk1Color.setValue(Color.BLACK);
-        disk2Color.setValue(Color.WHITE);
-        player1.setSelected(true);
+        GameSettings settings = SettingsReader.fromReader();
+        if (settings != null) {
+            choiceBox.setValue(settings.getBoardSize());
+            disk1Color.setValue(settings.getDisk1Color());
+            disk2Color.setValue(settings.getDisk2Color());
+        } else {
+            choiceBox.setValue(8);
+            disk1Color.setValue(Color.BLACK);
+            disk2Color.setValue(Color.WHITE);
+        }
     }
 
     @FXML
     protected void apply(ActionEvent event) {
-        int playerChosen = 0;
-        if (player1.isSelected()) {
-            playerChosen = 1;
-            legalInput = true;
-        } else if (player2.isSelected()) {
-            playerChosen = 2;
-            legalInput = true;
-        }
-        infoMap.put("firstPlayer", Integer.toString(playerChosen));
         infoMap.put("diskColor1", disk1Color.getValue().toString());
         infoMap.put("diskColor2", disk2Color.getValue().toString());
         infoMap.put("size", choiceBox.getValue().toString());
-        if (legalInput) {
-            writeToFile();
-            try {
-                SettingsReader reader = new SettingsReader();
-                Parent parent = FXMLLoader.load(getClass().getResource("menu.fxml"));
-                Scene scene = new Scene(parent, 400, 350);
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stage.setScene(scene);
-                stage.show();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        writeToFile();
+        try {
+            SettingsReader reader = new SettingsReader();
+            Parent parent = FXMLLoader.load(getClass().getResource("menu.fxml"));
+            Scene scene = new Scene(parent, 400, 350);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
     }
 
     @FXML

@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class GameController implements Initializable {
+public class GameController implements Initializable{
     private static final int defaultBoardSize = 8;
     private static final int gameScreenWidth = 1000;
     private static final int gameScreenHeight = 700;
@@ -45,14 +45,12 @@ public class GameController implements Initializable {
     private Label player2Score;
     @FXML
     private Label message;
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-    }
-
     @FXML
-    protected void startGame(ActionEvent event) {
+    private Stage stage;
+    @FXML
+    private Scene scene;
+
+    public void initialize(URL location, ResourceBundle resources) {
         try {
             GameSettings info = SettingsReader.fromReader();
             if (info == null) {
@@ -86,28 +84,11 @@ public class GameController implements Initializable {
             });
             gameStatus.getChildren().addAll(currentPlayer, player1Score, player2Score, message, quit);
             root.getChildren().addAll(board, gameStatus);
-            Scene scene = new Scene(root, gameScreenWidth, gameScreenHeight);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
+            scene = new Scene(root, gameScreenWidth, gameScreenHeight);
             board.setPossibleMoves(logic.getPossibleMoves());
             board.draw();
-            stage.show();
         } catch (Exception e) {
             e.printStackTrace();
-        }
-    }
-
-    public Location converter(double x, double y) {
-        int col = (int) x / ((gameScreenHeight - 100) / boardSize) + 1;
-        int row = (int) y / ((gameScreenHeight - 100) / boardSize) + 1;
-        return new Location(row, col);
-    }
-
-    public int otherTurn() {
-        if(logic.getTurn() == Type.FIRST) {
-            return 1;
-        } else {
-            return 2;
         }
     }
 
@@ -118,7 +99,7 @@ public class GameController implements Initializable {
         if (result == 1) {
             board.getTable()[move.getRow()][move.getCol()].updateStatus(otherTurn());
             logic.flipDeadCell(move.getRow(), move.getCol(), board);
-            System.out.println(move.getRow() + " " +move.getCol());
+            System.out.println(move.getRow() + " " + move.getCol());
             System.out.println(board.getTable()[move.getRow()][move.getCol()].getStatus());
             if (logic.getTurn() == Type.FIRST) {
                 logic.setTurn(Type.SECOND);
@@ -157,29 +138,41 @@ public class GameController implements Initializable {
         }
     }
 
-        @FXML
-        protected void startSettings (ActionEvent event){
-            loadFXML("settings.fxml", menuScreenWidth, menuScreenHeight, event);
-
-        }
-
-        @FXML
-        protected void loadFXML (String fxml,int width, int height, ActionEvent event){
-            try {
-                SettingsReader reader = new SettingsReader();
-                Parent parent = FXMLLoader.load(getClass().getResource(fxml));
-                Scene scene = new Scene(parent, width, height);
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stage.setScene(scene);
-                stage.show();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-
-        @FXML
-        protected void exit (){
-            System.exit(0);
-        }
-
+    public void setStage(Stage stage) {
+        this.stage = stage;
     }
+
+    public void show() {
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public Location converter(double x, double y) {
+        int col = (int) x / ((gameScreenHeight - 100) / boardSize) + 1;
+        int row = (int) y / ((gameScreenHeight - 100) / boardSize) + 1;
+        return new Location(row, col);
+    }
+
+    public int otherTurn() {
+        if (logic.getTurn() == Type.FIRST) {
+            return 1;
+        } else {
+            return 2;
+        }
+    }
+
+    @FXML
+    protected void loadFXML(String fxml, int width, int height, ActionEvent event) {
+        try {
+            SettingsReader reader = new SettingsReader();
+            Parent parent = FXMLLoader.load(getClass().getResource(fxml));
+            Scene scene = new Scene(parent, width, height);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+}

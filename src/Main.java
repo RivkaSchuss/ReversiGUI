@@ -13,7 +13,7 @@ public class Main extends Application {
         try {
             FXMLLoader loader = new FXMLLoader((ClassLoader.getSystemClassLoader().getResource("menu.fxml")));
             GridPane root = loader.load();
-            GameController controller = loader.getController();
+            //GameController controller = loader.getController();
             //SettingsReader reader = new SettingsReader();
             Scene scene = new Scene(root, 400, 350);
             primaryStage.setTitle("Reversi");

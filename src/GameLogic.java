@@ -4,83 +4,37 @@ import java.util.List;
 import java.util.Scanner;
 
 public class GameLogic {
-    private Type turn;
+    private Type turn = Type.FIRST;
     private Scanner scanner = new Scanner(System.in);
     private int running = 2;
     private int otherTurn = 1;
     private Board board;
 
-    public GameLogic(Type firstPlayer, Board board) {
-        this.turn = firstPlayer;
+    public GameLogic(Board board) {
         this.board = board;
     }
+
     public boolean isRunning() {
         return this.running > 0;
     }
 
-    public void playOneTurn(Location move) {
-        //System.out.println(x + " " + y);
-        /*
-        int row = 0, col = 0, l;
-        boolean moveCompleted = false;
-        while (!moveCompleted) {
-            l = 0;
-            List<Location> moves;
-            moves = getPossibleMoves(board.getTable(), board.getSize());
-            if (moves.size() == 0) {
-                running -= 1;
-                if (turn == Type.FIRST) {
-                    System.out.println("X: You have no possible moves!");
-                    return;
-                } else {
-                    System.out.println("O: You have no possible moves!");
-                    return;
-                }
-            }
-            running = 2;
-            if (turn == Type.FIRST) {
-                System.out.println("X: It's your move.");
-            } else {
-                System.out.println("O: It's your move.");
-            }
-            System.out.print("Your possible moves: ");
-            while (moves.get(l).getRow() != 0) {
-                System.out.print("(" + moves.get(l).getRow() + "," + moves.get(l).getCol() + ") ");
-                l++;
-            }
-            System.out.println();
-
-            boolean flag = false;
-            //validating the input
-            do {
-                System.out.println("Please enter your move row,col:");
-                if (scanner.hasNextInt()) {
-                    row = scanner.nextInt();
-                    if (scanner.hasNextInt()) {
-                        col = scanner.nextInt();
-                        flag = true;
-                    } else {
-                        System.out.println("Input isn't valid. Please enter your move row,col:");
-                        scanner.next();
-                    }
-                } else {
-                    System.out.println("Input isn't valid. Please enter your move row,col:");
-                    scanner.next();
-                }
-            } while ((!flag));
-            for (int i = 0; i < moves.size(); i++) {
-                if (row == moves.get(i).getRow() && col == moves.get(i).getCol()) {
-                    board.getTable()[row][col].updateStatus(otherTurn);
-                    flipDeadCell(row,col,board);
-                    moveCompleted = true;
-                }
-            }
-            if (!moveCompleted) {
-                System.out.println("This isn't an option");
-                //board.print();
+    public int checkMove(Location move) {
+        int row = 0, col = 0;
+        List<Location> moves;
+        moves = getPossibleMoves();
+        if (moves.size() == 0) {
+            running -= 1;
+            return -1;
+        }
+        running = 2;
+        for (int i = 0; i < moves.size(); i++) {
+            if (move.getRow() == moves.get(i).getRow() && move.getCol() == moves.get(i).getCol()) {
+                board.getTable()[row][col].updateStatus(otherTurn);
+                flipDeadCell(row, col, board);
+                return 1;
             }
         }
-        */
+        return 0;
     }
 
     public List<Location> clearMoveArea(Cell[][] table, int size, int rowPos, int colPos, int status) {
@@ -105,7 +59,7 @@ public class GameLogic {
                 }
             }
             //checking the lower side
-            if (rowPos + 2 <= size){
+            if (rowPos + 2 <= size) {
                 if (table[rowPos + 1][colPos].getStatus() != otherTurn
                         && table[rowPos + 1][colPos].getStatus() > 0) {
                     if (table[rowPos + 2][colPos].getStatus() == status) {
@@ -263,23 +217,22 @@ public class GameLogic {
         }
     }
 
-
     public Type getTurn() {
         return this.turn;
     }
 
-    public List<Location> getPossibleMoves(Cell[][] table, int size) {
+    public List<Location> getPossibleMoves() {
         //changed dynamically to be the options for the current
         // player's cell in the for loop.
         List<Location> subOptions = new ArrayList<>();
         //ultimately will store all of the options for moves.
         List<Location> options = new ArrayList<>();
-        for (int i = 0; i <= size; i++) {
-            for (int j = 0; j <= size; j++) {
-                if (table[i][j].getStatus() == otherTurn) {
-                    subOptions = this.clearMoveArea(table, size, i, j, 0);
+        for (int i = 0; i <= board.getSize(); i++) {
+            for (int j = 0; j <= board.getSize(); j++) {
+                if (board.getTable()[i][j].getStatus() == otherTurn) {
+                    subOptions = this.clearMoveArea(board.getTable(), board.getSize(), i, j, 0);
                     if (subOptions.size() != 0) {
-                        for (int l = 0; l < subOptions.size(); l++ ) {
+                        for (int l = 0; l < subOptions.size(); l++) {
                             if (!moveExist(options, subOptions.get(l))) {
                                 options.add(subOptions.get(l));
                             }
@@ -298,14 +251,13 @@ public class GameLogic {
         }
     }
 
-
     public void flipDeadCell(int row, int col, Board board) {
         int boardSize = board.getSize();
         int player1 = -1, player2 = -1;
-        if (turn  == Type.FIRST) {
+        if (turn == Type.FIRST) {
             player1 = 1;
             player2 = 2;
-        } else if (turn == Type.SECOND){
+        } else if (turn == Type.SECOND) {
             player1 = 2;
             player2 = 1;
         }
@@ -348,7 +300,7 @@ public class GameLogic {
 
     }
 
-    public void flipChosenCell(int rowOrigin,int colOrigin, int rowNew, int colNew,
+    public void flipChosenCell(int rowOrigin, int colOrigin, int rowNew, int colNew,
                                int rowDirection, int colDirection, int player1, Board board) {
         int currentRow = rowOrigin;
         int currentCol = colOrigin;
@@ -360,7 +312,6 @@ public class GameLogic {
             currentCol += colDirection;
         }
     }
-
 
     public Place whichPlace(int rowDif, int colDif) {
         if (rowDif > 0) {
@@ -389,10 +340,9 @@ public class GameLogic {
         return Place.up;
     }
 
-
     public Location removeOneDead(Place place, int row, int col, Board board) {
         int rowDead = 0, colDead = 0;
-        switch(place) {
+        switch (place) {
             case up:
                 rowDead = row - 1;
                 colDead = col;
@@ -446,7 +396,6 @@ public class GameLogic {
         return location;
     }
 
-
     public boolean moveExist(List<Location> options, Location location) {
         for (int i = 0; i < options.size(); i++) {
             if (options.get(i).getRow() == location.getRow() &&
@@ -458,7 +407,7 @@ public class GameLogic {
     }
 
     public Location getFromUp(Cell[][] table, int size, int rowPos, int colPos, int status) {
-        if(rowPos - 1 == 0) {
+        if (rowPos - 1 == 0) {
             return new Location(0, 0);
         }
         int value = table[rowPos - 1][colPos].getStatus();
@@ -472,9 +421,8 @@ public class GameLogic {
         return getFromUp(table, size, rowPos - 1, colPos, status);
     }
 
-
     public Location getFromUpRight(Cell[][] table, int size, int rowPos, int colPos, int status) {
-        if(rowPos - 1 == 0 || colPos + 1 > size) {
+        if (rowPos - 1 == 0 || colPos + 1 > size) {
             return new Location(0, 0);
         }
         int value = table[rowPos - 1][colPos + 1].getStatus();
@@ -488,9 +436,8 @@ public class GameLogic {
         return getFromUpRight(table, size, rowPos - 1, colPos + 1, status);
     }
 
-
     public Location getFromRight(Cell[][] table, int size, int rowPos, int colPos, int status) {
-        if(colPos + 1 > size) {
+        if (colPos + 1 > size) {
             return new Location(0, 0);
         }
         int value = table[rowPos][colPos + 1].getStatus();
@@ -504,9 +451,8 @@ public class GameLogic {
         return getFromRight(table, size, rowPos, colPos + 1, status);
     }
 
-
     public Location getFromDownRight(Cell[][] table, int size, int rowPos, int colPos, int status) {
-        if(rowPos + 1 > size || colPos + 1 > size) {
+        if (rowPos + 1 > size || colPos + 1 > size) {
             return new Location(0, 0);
         }
         int value = table[rowPos + 1][colPos + 1].getStatus();
@@ -520,9 +466,8 @@ public class GameLogic {
         return getFromDownRight(table, size, rowPos + 1, colPos + 1, status);
     }
 
-
     public Location getFromDown(Cell[][] table, int size, int rowPos, int colPos, int status) {
-        if(rowPos + 1 > size) {
+        if (rowPos + 1 > size) {
             return new Location(0, 0);
         }
         int value = table[rowPos + 1][colPos].getStatus();
@@ -536,9 +481,8 @@ public class GameLogic {
         return getFromDown(table, size, rowPos + 1, colPos, status);
     }
 
-
-    public Location getFromDownLeft(Cell[][]table, int size, int rowPos, int colPos, int status) {
-        if(rowPos + 1 > size || colPos - 1 == 0) {
+    public Location getFromDownLeft(Cell[][] table, int size, int rowPos, int colPos, int status) {
+        if (rowPos + 1 > size || colPos - 1 == 0) {
             return new Location(0, 0);
         }
         int value = table[rowPos + 1][colPos - 1].getStatus();
@@ -552,9 +496,8 @@ public class GameLogic {
         return getFromDownLeft(table, size, rowPos + 1, colPos - 1, status);
     }
 
-
     public Location getFromLeft(Cell[][] table, int size, int rowPos, int colPos, int status) {
-        if(colPos - 1 == 0) {
+        if (colPos - 1 == 0) {
             return new Location(0, 0);
         }
         int value = table[rowPos][colPos - 1].getStatus();
@@ -568,9 +511,8 @@ public class GameLogic {
         return getFromLeft(table, size, rowPos, colPos - 1, status);
     }
 
-
     public Location getFromUpLeft(Cell[][] table, int size, int rowPos, int colPos, int status) {
-        if(rowPos - 1 == 0 || colPos - 1 == 0) {
+        if (rowPos - 1 == 0 || colPos - 1 == 0) {
             return new Location(0, 0);
         }
         int value = table[rowPos - 1][colPos - 1].getStatus();

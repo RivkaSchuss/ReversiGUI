@@ -7,16 +7,21 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
+import java.util.List;
+
 public class Board extends GridPane {
     private int size;
     private Cell table[][];
     private Color disk1;
     private Color disk2;
+    private Color possibleColor;
+    private List<Location> possibleMoves;
 
     public Board(int size, Color disk1, Color disk2) {
         this.size = size;
         this.disk1 = disk1;
         this.disk2 = disk2;
+        possibleColor = Color.rgb(157, 192, 249);
         this.table = new Cell[size + 1][size + 1];
         for (int i = 0; i < size + 1; i++) {
             for (int j = 0; j < size + 1; j++) {
@@ -46,10 +51,22 @@ public class Board extends GridPane {
                 } else if (table[i][j].getStatus() == 2) {
                     this.add(new Circle(cell.getWidth()/2, cell.getHeight()/2,
                             300/size ,disk2), i, j);
+                } else {
+                     for (int k = 0; k < possibleMoves.size(); k++) {
+                         if (possibleMoves.get(k).getRow() == table[i][j].getSpot().getRow()
+                                 && possibleMoves.get(k).getCol() == table[i][j].getSpot().getCol()) {
+                             this.add(new Circle(cell.getWidth()/2, cell.getHeight()/2,
+                                     100/size, possibleColor), i, j);
+                         }
+                     }
                 }
             }
         }
 
+    }
+
+    public void setPossibleMoves(List<Location> possibleMoves) {
+        this.possibleMoves = possibleMoves;
     }
 
     public Cell[][] getTable() {

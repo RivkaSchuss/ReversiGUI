@@ -9,6 +9,10 @@ public class Cell extends Button {
         spot = new Location(0, 0);
     }
 
+    public Location getSpot() {
+        return spot;
+    }
+
     public int getStatus() {
         return this.status;
     }

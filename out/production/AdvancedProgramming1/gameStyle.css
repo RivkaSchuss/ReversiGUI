@@ -1,0 +1,6 @@
+#gamePane{
+    -fx-background-color: gray;
+    -fx-background-repeat: stretch;
+    -fx-background-size: 1050 700;
+    -fx-background-position: center center;
+}

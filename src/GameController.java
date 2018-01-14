@@ -1,12 +1,12 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
@@ -16,143 +16,242 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
-public class GameController implements Initializable{
+public class GameController {
     private static final int defaultBoardSize = 8;
-    private static final int gameScreenWidth = 1000;
+    private static final int gameScreenWidth = 1050;
     private static final int gameScreenHeight = 700;
     private static final int menuScreenWidth = 400;
     private static final int menuScreenHeight = 350;
-    @FXML
+    private static final int labelSize = 30;
     private int boardSize;
-    @FXML
     private Color disk1;
-    @FXML
     private Color disk2;
-    @FXML
     private Board board;
-    @FXML
     private GameLogic logic;
     @FXML
     private HBox root;
-    @FXML
     private Label currentPlayer;
-    @FXML
     private Label player1Score;
-    @FXML
     private Label player2Score;
-    @FXML
     private Label message;
     @FXML
     private Stage stage;
     @FXML
     private Scene scene;
+    private int running;
+    @FXML
+    private VBox gameStatus;
+    @FXML
+    private Alert alert;
+    private int firstScore;
+    private int secondScore;
 
-    public void initialize(URL location, ResourceBundle resources) {
+    /**
+     * initializes the game.
+     */
+    public void initialize() {
+        //initializes the alert box
+        alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Update");
+        alert.setHeaderText(null);
+        running = 2;
         try {
-            GameSettings info = SettingsReader.fromReader();
-            if (info == null) {
-                boardSize = defaultBoardSize;
-                disk1 = Color.BLACK;
-                disk2 = Color.WHITE;
-            } else {
-                boardSize = info.getBoardSize();
-                disk1 = info.getDisk1Color();
-                disk2 = info.getDisk2Color();
-            }
+            //reads from the settings, if there are no settings, sets defaults.
+            setSettings();
             board = new Board(boardSize, disk1, disk2);
+            //sets the entire board which is a grid pane to be an event listener, and every time clicked, a move
+            // is performed.
             board.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> {
                 Location move = converter(e.getX(), e.getY());
                 performMove(move);
             });
             logic = new GameLogic(board);
+            //sets the main root of the screen to be an hbox
             root = new HBox();
             root.setPadding(new Insets(5));
-            VBox gameStatus = new VBox();
+            //sets the vbox for all of the labels
+            gameStatus = new VBox();
             root.setAlignment(Pos.CENTER);
             root.setSpacing(20);
-            currentPlayer = new Label("Current player: First");
-            player1Score = new Label("First player's score: 2");
-            player2Score = new Label("Second player's score: 2");
-            message = new Label("Player 1: It's your move!");
-            message.setFont(new Font(30));
-            Button quit = new Button("Quit");
-            quit.setOnAction(ev -> {
-                loadFXML("menu.fxml", menuScreenWidth, menuScreenHeight, ev);
-            });
-            gameStatus.getChildren().addAll(currentPlayer, player1Score, player2Score, message, quit);
+            gameStatus.setSpacing(30);
+            setLabels();
+            //adds the gridpane and the vbox to the hbox
             root.getChildren().addAll(board, gameStatus);
+            //gets the background of the game screen
+            root.setId("gamePane");
             scene = new Scene(root, gameScreenWidth, gameScreenHeight);
-            board.setPossibleMoves(logic.getPossibleMoves());
-            board.draw();
+            scene.getStylesheets().add("gameStyle.css");
+            //draws the board
+            board.draw(logic.getPossibleMoves());
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     * reads and sets the settings of the game.
+     */
+    public void setSettings() {
+        GameSettings info = SettingsReader.fromReader();
+        if (info == null) {
+            boardSize = defaultBoardSize;
+            disk1 = Color.BLACK;
+            disk2 = Color.WHITE;
+        } else {
+            boardSize = info.getBoardSize();
+            disk1 = info.getDisk1Color();
+            disk2 = info.getDisk2Color();
+        }
+    }
+
+    /**
+     * initializes all of the labels.
+     */
+    public void setLabels() {
+        currentPlayer = new Label("Current player: First");
+        currentPlayer.setTextFill(disk1);
+        player1Score = new Label("First player's score: 2");
+        player2Score = new Label("Second player's score: 2");
+        message = new Label("");
+        currentPlayer.setFont(new Font(labelSize));
+        player1Score.setFont(new Font(labelSize));
+        player1Score.setTextFill(Color.WHITE);
+        player2Score.setFont(new Font(labelSize));
+        player2Score.setTextFill(Color.WHITE);
+        message.setFont(new Font(labelSize));
+        message.setTextFill(Color.WHITE);
+        Button quit = new Button("Return to Menu");
+        quit.setOnAction(ev -> {
+            loadFXML("res/menu.fxml", menuScreenWidth, menuScreenHeight, ev);
+        });
+        //adds the labels to the vbox
+        gameStatus.getChildren().addAll(currentPlayer, player1Score, player2Score, message, quit);
+    }
+
+    /**
+     * performs a move on a click.
+     * @param move the move performed.
+     */
     public void performMove(Location move) {
+        message.setText("");
+        boolean flag = false;
+        //checks if the move was a valid move.
         int result = logic.checkMove(move);
-        int firstScore = logic.checkScore(board.getTable(), boardSize, 1);
-        int secondScore = logic.checkScore(board.getTable(), boardSize, 2);
+        firstScore = logic.checkScore(board.getTable(), boardSize, 1);
+        secondScore = logic.checkScore(board.getTable(), boardSize, 2);
+        //if the move was a valid move:
         if (result == 1) {
+            //flips the disk
             board.getTable()[move.getRow()][move.getCol()].updateStatus(otherTurn());
             logic.flipDeadCell(move.getRow(), move.getCol(), board);
-            System.out.println(move.getRow() + " " + move.getCol());
-            System.out.println(board.getTable()[move.getRow()][move.getCol()].getStatus());
+            //switches turns
             if (logic.getTurn() == Type.FIRST) {
                 logic.setTurn(Type.SECOND);
+                //if the next player has no moves
+                if (logic.getPossibleMoves().size() == 0) {
+                    running -= 1;
+                    flag = true;
+                }
                 currentPlayer.setText("Current Player: Second");
-                message.setText("Player 2: It's your move!");
+                currentPlayer.setTextFill(disk2);
             } else {
                 logic.setTurn(Type.FIRST);
+                if (logic.getPossibleMoves().size() == 0) {
+                    running -= 1;
+                    flag = true;
+                }
                 currentPlayer.setText("Current Player: First");
-                message.setText("Player 1: It's your move!");
+                currentPlayer.setTextFill(disk1);
             }
-            board.setPossibleMoves(logic.getPossibleMoves());
-            board.draw();
+            //if the next player has no moves:
+            if (flag) {
+                noMoves();
+            }
+            board.draw(logic.getPossibleMoves());
             firstScore = logic.checkScore(board.getTable(), boardSize, 1);
             secondScore = logic.checkScore(board.getTable(), boardSize, 2);
             player1Score.setText("First player's score: " + firstScore);
             player2Score.setText("Second Player's score : " + secondScore);
-        } else if (result == -1) {
-            if (!logic.isRunning()) {
-                if (firstScore > secondScore) {
-                    message.setText("First player, You win!!!");
-                } else if (secondScore > firstScore) {
-                    message.setText("Second player, You win!!!");
-                } else {
-                    message.setText("It's a TIE!");
-                }
-            } else {
-                if (logic.getTurn() == Type.FIRST) {
-                    message.setText("Player 1: You have no more moves!");
-
-                } else {
-                    message.setText("Player 2: You have no more moves!");
-                }
+            if (!flag) {
+                running = 2;
             }
-        } else {
+            //if the move wasn't valid
+        } else if (result == 0) {
             message.setText("That isn't a move!");
         }
     }
 
+    /**
+     * deals with the case of the possible move list being empty.
+     */
+    public void noMoves() {
+        int numOfDisks = logic.checkScore(board.getTable(), boardSize, 1)
+                + logic.checkScore(board.getTable(), boardSize, 2);
+        //if the game is over, display an alert and end the game
+        if (running <= 0 || numOfDisks == boardSize * boardSize) {
+            if (firstScore > secondScore) {
+                alert.setContentText("Player 1, You win!!!");
+            } else if (secondScore > firstScore) {
+                alert.setContentText("Player 2, You win!!!");
+            } else {
+                alert.setContentText("It's a TIE!!!");
+            }
+            alert.showAndWait();
+            message.setText("GAME OVER");
+            //if the game isn't over, display an alert that there are no moves and switch players
+        } else {
+            board.draw(logic.getPossibleMoves());
+            firstScore = logic.checkScore(board.getTable(), boardSize, 1);
+            secondScore = logic.checkScore(board.getTable(), boardSize, 2);
+            player1Score.setText("First player's score: " + firstScore);
+            player2Score.setText("Second Player's score : " + secondScore);
+            alert.setContentText("You have no more moves!!");
+            alert.showAndWait();
+            //switch players
+            if (logic.getTurn() == Type.FIRST) {
+                logic.setTurn(Type.SECOND);
+                currentPlayer.setText("Current Player: Second");
+                currentPlayer.setTextFill(disk2);
+            } else {
+                logic.setTurn(Type.FIRST);
+                currentPlayer.setText("Current Player: First");
+                currentPlayer.setTextFill(disk1);
+            }
+        }
+    }
+
+    /**
+     * sets the stage for the game.
+     * @param stage the stage for the game.
+     */
     public void setStage(Stage stage) {
         this.stage = stage;
     }
 
+    /**
+     * sets the scene and shows the stage.
+     */
     public void show() {
         stage.setScene(scene);
         stage.show();
     }
 
+    /**
+     * converts the click to a defined point
+     * @param x the x clicked.
+     * @param y the y clicked.
+     * @return a new location.
+     */
     public Location converter(double x, double y) {
-        int col = (int) x / ((gameScreenHeight - 100) / boardSize) + 1;
-        int row = (int) y / ((gameScreenHeight - 100) / boardSize) + 1;
+        int row = (int) x / ((gameScreenHeight - 100) / boardSize) + 1;
+        int col = (int) y / ((gameScreenHeight - 100) / boardSize) + 1;
         return new Location(row, col);
     }
 
+    /**
+     * sets the other turn.
+     * @return the other turn.
+     */
     public int otherTurn() {
         if (logic.getTurn() == Type.FIRST) {
             return 1;
@@ -161,12 +260,21 @@ public class GameController implements Initializable{
         }
     }
 
+    /**
+     * loads an fxml.
+     * @param fxml the string of the fxml.
+     * @param width the width of the screen to load
+     * @param height the height of the screen to load
+     * @param event the event of the click
+     */
     @FXML
     protected void loadFXML(String fxml, int width, int height, ActionEvent event) {
         try {
             SettingsReader reader = new SettingsReader();
             Parent parent = FXMLLoader.load(getClass().getResource(fxml));
             Scene scene = new Scene(parent, width, height);
+            scene.getStylesheets().add("mainStyle.css");
+            parent.setId("pane");
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();

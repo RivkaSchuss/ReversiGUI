@@ -6,9 +6,12 @@
 
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
 <GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.121" fx:controller="MenuController">
     <VBox spacing = "10" id = "gameControl" alignment="CENTER"
           GridPane.rowIndex = "0">
+        <Text fx:id="title" text = "Reversi" GridPane.rowIndex="1" />
       <Button minHeight="5" minWidth="5"  onAction="#startGame" text="Start Reversi" />
       <Button minHeight="10" minWidth="5"  onAction="#startSettings" text="Settings" />
         <Button minHeight="15" minWidth="5" onAction="#exit" text = "Exit"/>

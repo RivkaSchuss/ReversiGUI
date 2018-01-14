@@ -3,14 +3,39 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdvancedProgramming1/Board.class" afterPath="$PROJECT_DIR$/out/production/AdvancedProgramming1/Board.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdvancedProgramming1/Cell.class" afterPath="$PROJECT_DIR$/out/production/AdvancedProgramming1/Cell.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdvancedProgramming1/Game.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/out/production/AdvancedProgramming1/GameController.class" afterPath="$PROJECT_DIR$/out/production/AdvancedProgramming1/GameController.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdvancedProgramming1/GameLogic$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdvancedProgramming1/GameLogic.class" afterPath="$PROJECT_DIR$/out/production/AdvancedProgramming1/GameLogic.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdvancedProgramming1/GameSettings.class" afterPath="$PROJECT_DIR$/out/production/AdvancedProgramming1/GameSettings.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdvancedProgramming1/Location.class" afterPath="$PROJECT_DIR$/out/production/AdvancedProgramming1/Location.class" />
       <change beforePath="$PROJECT_DIR$/out/production/AdvancedProgramming1/Main.class" afterPath="$PROJECT_DIR$/out/production/AdvancedProgramming1/Main.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdvancedProgramming1/game.fxml" afterPath="$PROJECT_DIR$/out/production/AdvancedProgramming1/game.fxml" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdvancedProgramming1/menu.fxml" afterPath="$PROJECT_DIR$/out/production/AdvancedProgramming1/menu.fxml" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdvancedProgramming1/MenuController.class" afterPath="$PROJECT_DIR$/out/production/AdvancedProgramming1/MenuController.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdvancedProgramming1/Place.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdvancedProgramming1/SettingsController.class" afterPath="$PROJECT_DIR$/out/production/AdvancedProgramming1/SettingsController.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdvancedProgramming1/SettingsReader.class" afterPath="$PROJECT_DIR$/out/production/AdvancedProgramming1/SettingsReader.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdvancedProgramming1/game.fxml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdvancedProgramming1/menu.fxml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdvancedProgramming1/settings" afterPath="$PROJECT_DIR$/out/production/AdvancedProgramming1/settings" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdvancedProgramming1/settings.fxml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/Board.java" afterPath="$PROJECT_DIR$/src/Board.java" />
+      <change beforePath="$PROJECT_DIR$/src/Cell.java" afterPath="$PROJECT_DIR$/src/Cell.java" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/GameController.java" afterPath="$PROJECT_DIR$/src/GameController.java" />
+      <change beforePath="$PROJECT_DIR$/src/GameLogic.java" afterPath="$PROJECT_DIR$/src/GameLogic.java" />
+      <change beforePath="$PROJECT_DIR$/src/GameSettings.java" afterPath="$PROJECT_DIR$/src/GameSettings.java" />
+      <change beforePath="$PROJECT_DIR$/src/Location.java" afterPath="$PROJECT_DIR$/src/Location.java" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/game.fxml" afterPath="$PROJECT_DIR$/src/game.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/menu.fxml" afterPath="$PROJECT_DIR$/src/menu.fxml" />
+      <change beforePath="$PROJECT_DIR$/src/MenuController.java" afterPath="$PROJECT_DIR$/src/MenuController.java" />
+      <change beforePath="$PROJECT_DIR$/src/Place.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/SettingsController.java" afterPath="$PROJECT_DIR$/src/SettingsController.java" />
+      <change beforePath="$PROJECT_DIR$/src/SettingsReader.java" afterPath="$PROJECT_DIR$/src/SettingsReader.java" />
+      <change beforePath="$PROJECT_DIR$/src/game.fxml" afterPath="$PROJECT_DIR$/src/res/game.fxml" />
+      <change beforePath="$PROJECT_DIR$/src/menu.fxml" afterPath="$PROJECT_DIR$/src/res/menu.fxml" />
+      <change beforePath="$PROJECT_DIR$/src/settings" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/settings.fxml" afterPath="$PROJECT_DIR$/src/res/settings.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -83,26 +108,22 @@
       <file leaf-file-name="GameController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1290">
-              <caret line="86" column="71" lean-forward="false" selection-start-line="86" selection-start-column="71" selection-end-line="86" selection-end-column="71" />
+            <state relative-caret-position="-267">
+              <caret line="77" column="56" lean-forward="true" selection-start-line="77" selection-start-column="56" selection-end-line="77" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5374#5375#0" expanded="true" />
-                <element signature="e#5408#5409#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MenuController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/MenuController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="25" column="38" lean-forward="false" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1329#1330#0" expanded="true" />
-                <element signature="e#1359#1360#0" expanded="true" />
+                <element signature="docComment;method#initialize#0;class#GameController#0" expanded="false" />
+                <element signature="docComment;method#setSettings#0;class#GameController#0" expanded="false" />
+                <element signature="docComment;method#setLabels#0;class#GameController#0" expanded="false" />
+                <element signature="docComment;method#performMove#0;class#GameController#0" expanded="false" />
+                <element signature="docComment;method#noMoves#0;class#GameController#0" expanded="false" />
+                <element signature="docComment;method#setStage#0;class#GameController#0" expanded="false" />
+                <element signature="e#8517#8518#0" expanded="true" />
+                <element signature="e#8551#8552#0" expanded="true" />
+                <element signature="docComment;method#show#0;class#GameController#0" expanded="false" />
+                <element signature="docComment;method#converter#0;class#GameController#0" expanded="false" />
+                <element signature="docComment;method#otherTurn#0;class#GameController#0" expanded="false" />
+                <element signature="docComment;method#loadFXML#0;class#GameController#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -111,16 +132,20 @@
       <file leaf-file-name="GameLogic.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-631">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="1660">
+              <caret line="421" column="52" lean-forward="false" selection-start-line="421" selection-start-column="52" selection-end-line="421" selection-end-column="52" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#314#315#0" expanded="true" />
-                <element signature="e#348#349#0" expanded="true" />
+                <element signature="docComment;method#checkMove#0;class#GameLogic#0" expanded="false" />
+                <element signature="docComment;method#clearMoveArea#0;class#GameLogic#0" expanded="false" />
                 <element signature="method#clearMoveArea#0;class#GameLogic#0" expanded="false" />
-                <element signature="e#8975#8976#0" expanded="true" />
-                <element signature="e#9007#9008#0" expanded="true" />
-                <element signature="method#removeOneDead#0;class#GameLogic#0" expanded="false" />
+                <element signature="docComment;method#setTurn#0;class#GameLogic#0" expanded="false" />
+                <element signature="docComment;method#getTurn#0;class#GameLogic#0" expanded="false" />
+                <element signature="e#9182#9183#0" expanded="true" />
+                <element signature="e#9214#9215#0" expanded="true" />
+                <element signature="docComment;method#getPossibleMoves#0;class#GameLogic#0" expanded="false" />
+                <element signature="docComment;method#flipDeadCell#0;class#GameLogic#0" expanded="false" />
+                <element signature="docComment;method#flipChosenCell#0;class#GameLogic#0" expanded="false" />
+                <element signature="docComment;method#moveExist#0;class#GameLogic#0" expanded="false" />
                 <element signature="method#getFromUp#0;class#GameLogic#0" expanded="false" />
                 <element signature="method#getFromUpRight#0;class#GameLogic#0" expanded="false" />
                 <element signature="method#getFromRight#0;class#GameLogic#0" expanded="false" />
@@ -134,60 +159,118 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Board.java">
+      <file leaf-file-name="Location.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Location.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+              <caret line="28" column="12" lean-forward="true" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2652#2653#0" expanded="true" />
-                <element signature="e#2702#2703#0" expanded="true" />
-                <element signature="e#2736#2737#0" expanded="true" />
-                <element signature="e#2769#2770#0" expanded="true" />
-                <element signature="e#2797#2798#0" expanded="true" />
-                <element signature="e#2829#2830#0" expanded="true" />
+                <element signature="docComment;method#Location#0;class#Location#0" expanded="false" />
+                <element signature="docComment;method#getRow#0;class#Location#0" expanded="false" />
+                <element signature="e#352#353#0" expanded="true" />
+                <element signature="e#383#384#0" expanded="true" />
+                <element signature="docComment;method#getCol#0;class#Location#0" expanded="false" />
+                <element signature="e#475#476#0" expanded="true" />
+                <element signature="e#506#507#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/menu.fxml">
+      <file leaf-file-name="SettingsController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/SettingsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="35" lean-forward="true" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+            <state relative-caret-position="82">
+              <caret line="75" column="16" lean-forward="false" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
+              <folding>
+                <element signature="docComment;method#initialize#0;class#SettingsController#0" expanded="false" />
+                <element signature="docComment;method#apply#0;class#SettingsController#0" expanded="false" />
+                <element signature="docComment;method#writeToFile#0;class#SettingsController#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenuController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MenuController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="660">
+              <caret line="52" column="29" lean-forward="false" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;method#initialize#0;class#MenuController#0" expanded="false" />
+                <element signature="docComment;method#startGame#0;class#MenuController#0" expanded="false" />
+                <element signature="docComment;method#startSettings#0;class#MenuController#0" expanded="false" />
+                <element signature="docComment;method#exit#0;class#MenuController#0" expanded="false" />
+                <element signature="e#2013#2014#0" expanded="true" />
+                <element signature="e#2043#2044#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/res/settings.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="193">
+              <caret line="23" column="76" lean-forward="false" selection-start-line="23" selection-start-column="76" selection-end-line="23" selection-end-column="76" />
               <folding />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Board.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-131">
+              <caret line="34" column="30" lean-forward="false" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+              <folding>
+                <element signature="docComment;method#Board#0;class#Board#0" expanded="false" />
+                <element signature="docComment;method#draw#0;class#Board#0" expanded="false" />
+                <element signature="docComment;method#getTable#0;class#Board#0" expanded="false" />
+                <element signature="e#3560#3561#0" expanded="true" />
+                <element signature="e#3593#3594#0" expanded="true" />
+                <element signature="docComment;method#getSize#0;class#Board#0" expanded="false" />
+                <element signature="e#3694#3695#0" expanded="true" />
+                <element signature="e#3726#3727#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/settings">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gameStyle.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gameStyle.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="game.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game.fxml">
+        <entry file="file://$PROJECT_DIR$/src/res/game.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="49" lean-forward="false" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+            <state relative-caret-position="165">
+              <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
               <folding />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder">
             <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-              <folding>
-                <element signature="e#871#872#0" expanded="true" />
-                <element signature="e#899#900#0" expanded="true" />
-              </folding>
-            </state>
           </provider>
         </entry>
       </file>
@@ -199,6 +282,7 @@
         <option value="Enum" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -237,7 +321,6 @@
         <option value="$PROJECT_DIR$/src/sample/Game.java" />
         <option value="$PROJECT_DIR$/src/sample/Main.java" />
         <option value="$PROJECT_DIR$/src/Place.java" />
-        <option value="$PROJECT_DIR$/src/Location.java" />
         <option value="$PROJECT_DIR$/src/Controller.java" />
         <option value="$PROJECT_DIR$/src/sample.fxml" />
         <option value="$PROJECT_DIR$/src/StartGame.java" />
@@ -250,18 +333,23 @@
         <option value="$PROJECT_DIR$/src/DefaultGameLogic.java" />
         <option value="$PROJECT_DIR$/src/Print.java" />
         <option value="$PROJECT_DIR$/src/Game.java" />
-        <option value="$PROJECT_DIR$/src/GameSettings.java" />
-        <option value="$PROJECT_DIR$/src/SettingsController.java" />
-        <option value="$PROJECT_DIR$/src/SettingsReader.java" />
-        <option value="$PROJECT_DIR$/src/settings.fxml" />
-        <option value="$PROJECT_DIR$/src/Cell.java" />
-        <option value="$PROJECT_DIR$/src/Board.java" />
-        <option value="$PROJECT_DIR$/src/GameLogic.java" />
-        <option value="$PROJECT_DIR$/src/menu.fxml" />
         <option value="$PROJECT_DIR$/src/game.fxml" />
+        <option value="$PROJECT_DIR$/src/settings.fxml" />
+        <option value="$PROJECT_DIR$/src/menu.fxml" />
+        <option value="$PROJECT_DIR$/src/mainStyle.css" />
+        <option value="$PROJECT_DIR$/src/res/gameStyle.css" />
+        <option value="$PROJECT_DIR$/src/Board.java" />
+        <option value="$PROJECT_DIR$/src/Cell.java" />
+        <option value="$PROJECT_DIR$/src/GameLogic.java" />
+        <option value="$PROJECT_DIR$/src/GameSettings.java" />
+        <option value="$PROJECT_DIR$/src/Location.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/GameController.java" />
         <option value="$PROJECT_DIR$/src/MenuController.java" />
+        <option value="$PROJECT_DIR$/src/SettingsReader.java" />
+        <option value="$PROJECT_DIR$/src/gameStyle.css" />
+        <option value="$PROJECT_DIR$/src/GameController.java" />
+        <option value="$PROJECT_DIR$/src/res/settings.fxml" />
+        <option value="$PROJECT_DIR$/src/SettingsController.java" />
       </list>
     </option>
   </component>
@@ -298,8 +386,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -312,12 +402,20 @@
               <item name="AdvancedProgramming1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="AdvancedProgramming1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AdvancedProgramming1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AdvancedProgramming1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -332,12 +430,15 @@
     <property name="dynamic.classpath" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/res" />
+      <recent name="$PROJECT_DIR$/src/fxml" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
@@ -501,12 +602,14 @@
       <workItem from="1515519277764" duration="9994000" />
       <workItem from="1515577408000" duration="27072000" />
       <workItem from="1515618460872" duration="5209000" />
-      <workItem from="1515664226772" duration="8221000" />
+      <workItem from="1515664226772" duration="27538000" />
+      <workItem from="1515857991228" duration="201000" />
+      <workItem from="1515919900840" duration="6679000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120583000" />
+    <option name="totallyTimeSpent" value="146780000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -529,20 +632,19 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5167364" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28661087" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24847375" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25579977" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32845187" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2876569" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3169456" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -554,6 +656,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32845187" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -603,7 +706,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="35" />
+      <option name="time" value="44" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -612,9 +715,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/GameLogic.java" />
-    <entry file="file://$PROJECT_DIR$/src/Player.java" />
     <entry file="file://$PROJECT_DIR$/src/Board.java" />
     <entry file="file://$PROJECT_DIR$/src/ConsolePlayer.java" />
     <entry file="file://$PROJECT_DIR$/src/DefaultGameLogic.java" />
@@ -647,21 +747,6 @@
     <entry file="file://$PROJECT_DIR$/settings" />
     <entry file="file://$PROJECT_DIR$/settings" />
     <entry file="file://$PROJECT_DIR$/settings" />
-    <entry file="file://$PROJECT_DIR$/src/Place.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Type.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/javafx-src.zip!/javafx/scene/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -690,14 +775,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DefaultGameLogic.java" />
-    <entry file="file://$PROJECT_DIR$/src/settings">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="6" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/menu.fxml">
+    <entry file="file://$PROJECT_DIR$/src/res/menu.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="83" lean-forward="false" selection-start-line="11" selection-start-column="83" selection-end-line="11" selection-end-column="83" />
@@ -715,17 +793,19 @@
           <caret line="66" column="52" lean-forward="false" selection-start-line="66" selection-start-column="52" selection-end-line="66" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5374#5375#0" expanded="true" />
-            <element signature="e#5408#5409#0" expanded="true" />
+            <element signature="docComment;method#initialize#0;class#GameController#0" expanded="false" />
+            <element signature="docComment;method#setSettings#0;class#GameController#0" expanded="false" />
+            <element signature="docComment;method#setLabels#0;class#GameController#0" expanded="false" />
+            <element signature="docComment;method#performMove#0;class#GameController#0" expanded="false" />
+            <element signature="docComment;method#noMoves#0;class#GameController#0" expanded="false" />
+            <element signature="docComment;method#setStage#0;class#GameController#0" expanded="false" />
+            <element signature="e#8517#8518#0" expanded="true" />
+            <element signature="e#8551#8552#0" expanded="true" />
+            <element signature="docComment;method#show#0;class#GameController#0" expanded="false" />
+            <element signature="docComment;method#converter#0;class#GameController#0" expanded="false" />
+            <element signature="docComment;method#otherTurn#0;class#GameController#0" expanded="false" />
+            <element signature="docComment;method#loadFXML#0;class#GameController#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="6" lean-forward="false" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -735,98 +815,20 @@
           <caret line="79" column="57" lean-forward="true" selection-start-line="79" selection-start-column="57" selection-end-line="79" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5374#5375#0" expanded="true" />
-            <element signature="e#5408#5409#0" expanded="true" />
+            <element signature="docComment;method#initialize#0;class#GameController#0" expanded="false" />
+            <element signature="docComment;method#setSettings#0;class#GameController#0" expanded="false" />
+            <element signature="docComment;method#setLabels#0;class#GameController#0" expanded="false" />
+            <element signature="docComment;method#performMove#0;class#GameController#0" expanded="false" />
+            <element signature="docComment;method#noMoves#0;class#GameController#0" expanded="false" />
+            <element signature="docComment;method#setStage#0;class#GameController#0" expanded="false" />
+            <element signature="e#8517#8518#0" expanded="true" />
+            <element signature="e#8551#8552#0" expanded="true" />
+            <element signature="docComment;method#show#0;class#GameController#0" expanded="false" />
+            <element signature="docComment;method#converter#0;class#GameController#0" expanded="false" />
+            <element signature="docComment;method#otherTurn#0;class#GameController#0" expanded="false" />
+            <element signature="docComment;method#loadFXML#0;class#GameController#0" expanded="false" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SettingsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="42" column="45" lean-forward="false" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SettingsReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="17" column="56" lean-forward="false" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/settings.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="74" lean-forward="false" selection-start-line="23" selection-start-column="74" selection-end-line="23" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameSettings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="36" column="73" lean-forward="false" selection-start-line="36" selection-start-column="73" selection-end-line="36" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Location.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#187#188#0" expanded="false" />
-            <element signature="e#218#219#0" expanded="false" />
-            <element signature="e#276#277#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Cell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="e#332#333#0" expanded="false" />
-            <element signature="e#376#377#0" expanded="false" />
-            <element signature="e#412#413#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2652#2653#0" expanded="true" />
-            <element signature="e#2702#2703#0" expanded="true" />
-            <element signature="e#2736#2737#0" expanded="true" />
-            <element signature="e#2769#2770#0" expanded="true" />
-            <element signature="e#2797#2798#0" expanded="true" />
-            <element signature="e#2829#2830#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="49" lean-forward="false" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/javafx-src.zip!/javafx/stage/Stage.java">
@@ -843,32 +845,237 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="531">
           <caret line="197" column="0" lean-forward="false" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="1657" column="0" lean-forward="false" selection-start-line="1657" selection-start-column="0" selection-end-line="1657" selection-end-column="0" />
+        <state relative-caret-position="33810">
+          <caret line="2408" column="0" lean-forward="false" selection-start-line="2408" selection-start-column="0" selection-end-line="2408" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/res/menu.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="68" lean-forward="false" selection-start-line="13" selection-start-column="68" selection-end-line="13" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="33" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Place.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="3" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Cell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="35" column="21" lean-forward="true" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
           <folding>
-            <element signature="e#66921#66922#0" expanded="true" />
+            <element signature="docComment;method#Cell#0;class#Cell#0" expanded="false" />
+            <element signature="docComment;method#getSpot#0;class#Cell#0" expanded="false" />
+            <element signature="e#359#360#0" expanded="true" />
+            <element signature="e#386#387#0" expanded="true" />
+            <element signature="docComment;method#getStatus#0;class#Cell#0" expanded="false" />
+            <element signature="e#494#495#0" expanded="true" />
+            <element signature="e#528#529#0" expanded="true" />
+            <element signature="docComment;method#updateStatus#0;class#Cell#0" expanded="false" />
+            <element signature="e#662#663#0" expanded="true" />
+            <element signature="e#698#699#0" expanded="true" />
+            <element signature="docComment;method#setSpot#0;class#Cell#0" expanded="false" />
+            <element signature="e#880#881#0" expanded="true" />
+            <element signature="e#930#931#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding>
+            <element signature="docComment;method#GameSettings#0;class#GameSettings#0" expanded="false" />
+            <element signature="docComment;method#getDisk1Color#0;class#GameSettings#0" expanded="false" />
+            <element signature="e#557#558#0" expanded="true" />
+            <element signature="e#595#596#0" expanded="true" />
+            <element signature="docComment;method#getDisk2Color#0;class#GameSettings#0" expanded="false" />
+            <element signature="e#706#707#0" expanded="true" />
+            <element signature="e#744#745#0" expanded="true" />
+            <element signature="docComment;method#getBoardSize#0;class#GameSettings#0" expanded="false" />
+            <element signature="e#850#851#0" expanded="true" />
+            <element signature="e#887#888#0" expanded="true" />
+            <element signature="docComment;method#readFromStringMap#0;class#GameSettings#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="38" column="20" lean-forward="true" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#start#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#main#0;class#Main#0" expanded="false" />
+            <element signature="e#1244#1245#0" expanded="true" />
+            <element signature="e#1272#1273#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mainStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="43" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="4" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SettingsReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="49" column="32" lean-forward="true" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
+          <folding>
+            <element signature="docComment;method#fromReader#0;class#SettingsReader#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Type.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AdvancedProgramming1.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/res/game.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Location.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="28" column="12" lean-forward="true" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+          <folding>
+            <element signature="docComment;method#Location#0;class#Location#0" expanded="false" />
+            <element signature="docComment;method#getRow#0;class#Location#0" expanded="false" />
+            <element signature="e#352#353#0" expanded="true" />
+            <element signature="e#383#384#0" expanded="true" />
+            <element signature="docComment;method#getCol#0;class#Location#0" expanded="false" />
+            <element signature="e#475#476#0" expanded="true" />
+            <element signature="e#506#507#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MenuController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="52" column="29" lean-forward="false" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#initialize#0;class#MenuController#0" expanded="false" />
+            <element signature="docComment;method#startGame#0;class#MenuController#0" expanded="false" />
+            <element signature="docComment;method#startSettings#0;class#MenuController#0" expanded="false" />
+            <element signature="docComment;method#exit#0;class#MenuController#0" expanded="false" />
+            <element signature="e#2013#2014#0" expanded="true" />
+            <element signature="e#2043#2044#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/settings">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/res/settings.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="23" column="76" lean-forward="false" selection-start-line="23" selection-start-column="76" selection-end-line="23" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-131">
+          <caret line="34" column="30" lean-forward="false" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+          <folding>
+            <element signature="docComment;method#Board#0;class#Board#0" expanded="false" />
+            <element signature="docComment;method#draw#0;class#Board#0" expanded="false" />
+            <element signature="docComment;method#getTable#0;class#Board#0" expanded="false" />
+            <element signature="e#3560#3561#0" expanded="true" />
+            <element signature="e#3593#3594#0" expanded="true" />
+            <element signature="docComment;method#getSize#0;class#Board#0" expanded="false" />
+            <element signature="e#3694#3695#0" expanded="true" />
+            <element signature="e#3726#3727#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-631">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="1660">
+          <caret line="421" column="52" lean-forward="false" selection-start-line="421" selection-start-column="52" selection-end-line="421" selection-end-column="52" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#314#315#0" expanded="true" />
-            <element signature="e#348#349#0" expanded="true" />
+            <element signature="docComment;method#checkMove#0;class#GameLogic#0" expanded="false" />
+            <element signature="docComment;method#clearMoveArea#0;class#GameLogic#0" expanded="false" />
             <element signature="method#clearMoveArea#0;class#GameLogic#0" expanded="false" />
-            <element signature="e#8975#8976#0" expanded="true" />
-            <element signature="e#9007#9008#0" expanded="true" />
-            <element signature="method#removeOneDead#0;class#GameLogic#0" expanded="false" />
+            <element signature="docComment;method#setTurn#0;class#GameLogic#0" expanded="false" />
+            <element signature="docComment;method#getTurn#0;class#GameLogic#0" expanded="false" />
+            <element signature="e#9182#9183#0" expanded="true" />
+            <element signature="e#9214#9215#0" expanded="true" />
+            <element signature="docComment;method#getPossibleMoves#0;class#GameLogic#0" expanded="false" />
+            <element signature="docComment;method#flipDeadCell#0;class#GameLogic#0" expanded="false" />
+            <element signature="docComment;method#flipChosenCell#0;class#GameLogic#0" expanded="false" />
+            <element signature="docComment;method#moveExist#0;class#GameLogic#0" expanded="false" />
             <element signature="method#getFromUp#0;class#GameLogic#0" expanded="false" />
             <element signature="method#getFromUpRight#0;class#GameLogic#0" expanded="false" />
             <element signature="method#getFromRight#0;class#GameLogic#0" expanded="false" />
@@ -881,48 +1088,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-          <folding>
-            <element signature="e#871#872#0" expanded="true" />
-            <element signature="e#899#900#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/menu.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="35" lean-forward="true" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1290">
-          <caret line="86" column="71" lean-forward="false" selection-start-line="86" selection-start-column="71" selection-end-line="86" selection-end-column="71" />
+        <state relative-caret-position="-267">
+          <caret line="77" column="56" lean-forward="true" selection-start-line="77" selection-start-column="56" selection-end-line="77" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5374#5375#0" expanded="true" />
-            <element signature="e#5408#5409#0" expanded="true" />
+            <element signature="docComment;method#initialize#0;class#GameController#0" expanded="false" />
+            <element signature="docComment;method#setSettings#0;class#GameController#0" expanded="false" />
+            <element signature="docComment;method#setLabels#0;class#GameController#0" expanded="false" />
+            <element signature="docComment;method#performMove#0;class#GameController#0" expanded="false" />
+            <element signature="docComment;method#noMoves#0;class#GameController#0" expanded="false" />
+            <element signature="docComment;method#setStage#0;class#GameController#0" expanded="false" />
+            <element signature="e#8517#8518#0" expanded="true" />
+            <element signature="e#8551#8552#0" expanded="true" />
+            <element signature="docComment;method#show#0;class#GameController#0" expanded="false" />
+            <element signature="docComment;method#converter#0;class#GameController#0" expanded="false" />
+            <element signature="docComment;method#otherTurn#0;class#GameController#0" expanded="false" />
+            <element signature="docComment;method#loadFXML#0;class#GameController#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MenuController.java">
+    <entry file="file://$PROJECT_DIR$/src/SettingsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="25" column="38" lean-forward="false" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+        <state relative-caret-position="82">
+          <caret line="75" column="16" lean-forward="false" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1329#1330#0" expanded="true" />
-            <element signature="e#1359#1360#0" expanded="true" />
+            <element signature="docComment;method#initialize#0;class#SettingsController#0" expanded="false" />
+            <element signature="docComment;method#apply#0;class#SettingsController#0" expanded="false" />
+            <element signature="docComment;method#writeToFile#0;class#SettingsController#0" expanded="false" />
           </folding>
         </state>
       </provider>

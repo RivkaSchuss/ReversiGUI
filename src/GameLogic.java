@@ -5,8 +5,6 @@ import java.util.Scanner;
 
 public class GameLogic {
     private Type turn = Type.FIRST;
-    private Scanner scanner = new Scanner(System.in);
-    private int running = 2;
     private int otherTurn = 1;
     private Board board;
 
@@ -14,29 +12,31 @@ public class GameLogic {
         this.board = board;
     }
 
-    public boolean isRunning() {
-        return this.running > 0;
-    }
-
+    /**
+     * checks if the move is valid.
+     * @param move the move to check
+     * @return 1 or 0 if there is a move or not.
+     */
     public int checkMove(Location move) {
-        int row = 0, col = 0;
         List<Location> moves;
         moves = getPossibleMoves();
-        if (moves.size() == 0) {
-            running -= 1;
-            return -1;
-        }
-        running = 2;
         for (int i = 0; i < moves.size(); i++) {
             if (move.getRow() == moves.get(i).getRow() && move.getCol() == moves.get(i).getCol()) {
-                board.getTable()[row][col].updateStatus(otherTurn);
-                flipDeadCell(row, col, board);
                 return 1;
             }
         }
         return 0;
     }
 
+    /**
+     * checks around the point.
+     * @param table the board table
+     * @param size the board size
+     * @param rowPos the row position to check
+     * @param colPos the column position to check
+     * @param status the status to check against.
+     * @return a list of sub options
+     */
     public List<Location> clearMoveArea(Cell[][] table, int size, int rowPos, int colPos, int status) {
         int l = 0;
         List<Location> currentOptions = new ArrayList<>();
@@ -208,6 +208,10 @@ public class GameLogic {
         return counter;
     }
 
+    /**
+     * sets the turn of the player
+     * @param currentTurn the current turn to change to
+     */
     public void setTurn(Type currentTurn) {
         this.turn = currentTurn;
         if (currentTurn == Type.FIRST) {
@@ -217,10 +221,18 @@ public class GameLogic {
         }
     }
 
+    /**
+     * returns the game turn
+     * @return the game turn
+     */
     public Type getTurn() {
         return this.turn;
     }
 
+    /**
+     * gets a list of the possible moves.
+     * @return a list of possible moves.
+     */
     public List<Location> getPossibleMoves() {
         //changed dynamically to be the options for the current
         // player's cell in the for loop.
@@ -251,6 +263,12 @@ public class GameLogic {
         }
     }
 
+    /**
+     * flips the cell
+     * @param row the row to flip
+     * @param col the column to flip
+     * @param board the board
+     */
     public void flipDeadCell(int row, int col, Board board) {
         int boardSize = board.getSize();
         int player1 = -1, player2 = -1;
@@ -300,6 +318,17 @@ public class GameLogic {
 
     }
 
+    /**
+     * flips the specific cell
+     * @param rowOrigin the row to change
+     * @param colOrigin the column to change
+     * @param rowNew the new row
+     * @param colNew the new col
+     * @param rowDirection the row direction
+     * @param colDirection the column direction
+     * @param player1 the player
+     * @param board the board
+     */
     public void flipChosenCell(int rowOrigin, int colOrigin, int rowNew, int colNew,
                                int rowDirection, int colDirection, int player1, Board board) {
         int currentRow = rowOrigin;
@@ -313,89 +342,12 @@ public class GameLogic {
         }
     }
 
-    public Place whichPlace(int rowDif, int colDif) {
-        if (rowDif > 0) {
-            if (colDif > 0) {
-                return Place.upLeft;
-            } else if (colDif == 0) {
-                return Place.up;
-            } else if (colDif < 0) {
-                return Place.upRight;
-            }
-        } else if (rowDif == 0) {
-            if (colDif > 0) {
-                return Place.west;
-            } else if (colDif < 0) {
-                return Place.east;
-            }
-        } else if (rowDif < 0) {
-            if (colDif > 0) {
-                return Place.downLeft;
-            } else if (colDif == 0) {
-                return Place.down;
-            } else if (colDif < 0) {
-                return Place.downRight;
-            }
-        }
-        return Place.up;
-    }
-
-    public Location removeOneDead(Place place, int row, int col, Board board) {
-        int rowDead = 0, colDead = 0;
-        switch (place) {
-            case up:
-                rowDead = row - 1;
-                colDead = col;
-                board.getTable()[rowDead][colDead].
-                        updateStatus(otherTurn);
-                break;
-            case upRight:
-                rowDead = row - 1;
-                colDead = col + 1;
-                board.getTable()[rowDead][colDead].
-                        updateStatus(otherTurn);
-                break;
-            case east:
-                rowDead = row;
-                colDead = col + 1;
-                board.getTable()[rowDead][colDead].
-                        updateStatus(otherTurn);
-                break;
-            case downRight:
-                rowDead = row + 1;
-                colDead = col + 1;
-                board.getTable()[rowDead][colDead].
-                        updateStatus(otherTurn);
-                break;
-            case down:
-                rowDead = row + 1;
-                colDead = col;
-                board.getTable()[rowDead][colDead].
-                        updateStatus(otherTurn);
-                break;
-            case downLeft:
-                rowDead = row + 1;
-                colDead = col - 1;
-                board.getTable()[rowDead][colDead].
-                        updateStatus(otherTurn);
-                break;
-            case west:
-                rowDead = row;
-                colDead = col - 1;
-                board.getTable()[rowDead][colDead].
-                        updateStatus(otherTurn);
-                break;
-            case upLeft:
-                rowDead = row - 1;
-                colDead = col - 1;
-                board.getTable()[rowDead][colDead].
-                        updateStatus(otherTurn);
-                break;
-        }
-        Location location = new Location(rowDead, colDead);
-        return location;
-    }
-
+    /**
+     * checks if the move exists.
+     * @param options the list of options
+     * @param location the location to check
+     * @return true if it exists, false if it doesnt.
+     */
     public boolean moveExist(List<Location> options, Location location) {
         for (int i = 0; i < options.size(); i++) {
             if (options.get(i).getRow() == location.getRow() &&
@@ -405,6 +357,7 @@ public class GameLogic {
         }
         return false;
     }
+
 
     public Location getFromUp(Cell[][] table, int size, int rowPos, int colPos, int status) {
         if (rowPos - 1 == 0) {

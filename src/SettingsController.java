@@ -25,8 +25,6 @@ public class SettingsController {
     @FXML
     private  Map<String,String> infoMap;
     @FXML
-    private GridPane pane;
-    @FXML
     private Text title;
     @FXML
     private Label color1;
@@ -90,7 +88,7 @@ public class SettingsController {
             writeToFile();
             try {
                 SettingsReader reader = new SettingsReader();
-                Parent parent = FXMLLoader.load(getClass().getResource("res/menu.fxml"));
+                Parent parent = FXMLLoader.load(getClass().getResource("menu.fxml"));
                 parent.setId("pane");
                 Scene scene = new Scene(parent, 450, 350);
                 scene.getStylesheets().add("mainStyle.css");

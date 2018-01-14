@@ -16,13 +16,11 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         try {
-            FXMLLoader loader = new FXMLLoader((ClassLoader.getSystemClassLoader().getResource("res/menu.fxml")));
+            FXMLLoader loader = new FXMLLoader((ClassLoader.getSystemClassLoader().getResource("menu.fxml")));
             GridPane root = loader.load();
             root.setId("pane");
-            //GameController controller = loader.getController();
-            //SettingsReader reader = new SettingsReader();
             Scene scene = new Scene(root, 450, 350);
-            scene.getStylesheets().addAll(this.getClass().getResource("mainStyle.css").toExternalForm());
+            scene.getStylesheets().add("mainStyle.css");
             primaryStage.setTitle("Reversi");
             primaryStage.setScene(scene);
             primaryStage.show();

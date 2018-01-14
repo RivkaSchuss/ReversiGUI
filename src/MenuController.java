@@ -30,7 +30,7 @@ public class MenuController{
         try {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             SettingsReader reader = new SettingsReader();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("res/game.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("game.fxml"));
             Parent root = loader.load();
             GameController controller = loader.getController();
             controller.setStage(stage);
@@ -48,7 +48,7 @@ public class MenuController{
     protected void startSettings (ActionEvent event){
         try {
             SettingsReader reader = new SettingsReader();
-            Parent parent = FXMLLoader.load(getClass().getResource("res/settings.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("settings.fxml"));
             parent.setId("pane");
             Scene scene = new Scene(parent, 450, 350);
             scene.getStylesheets().add("mainStyle.css");

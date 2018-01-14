@@ -13,6 +13,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
@@ -131,10 +132,11 @@ public class GameController {
         message.setTextFill(Color.WHITE);
         Button quit = new Button("Return to Menu");
         quit.setOnAction(ev -> {
-            loadFXML("res/menu.fxml", menuScreenWidth, menuScreenHeight, ev);
+            loadFXML("menu.fxml", menuScreenWidth, menuScreenHeight, ev);
         });
         //adds the labels to the vbox
         gameStatus.getChildren().addAll(currentPlayer, player1Score, player2Score, message, quit);
+        gameStatus.setAlignment(Pos.TOP_CENTER);
     }
 
     /**
@@ -175,14 +177,15 @@ public class GameController {
             //if the next player has no moves:
             if (flag) {
                 noMoves();
-            }
-            board.draw(logic.getPossibleMoves());
-            firstScore = logic.checkScore(board.getTable(), boardSize, 1);
-            secondScore = logic.checkScore(board.getTable(), boardSize, 2);
-            player1Score.setText("First player's score: " + firstScore);
-            player2Score.setText("Second Player's score : " + secondScore);
-            if (!flag) {
-                running = 2;
+            } else {
+                board.draw(logic.getPossibleMoves());
+                firstScore = logic.checkScore(board.getTable(), boardSize, 1);
+                secondScore = logic.checkScore(board.getTable(), boardSize, 2);
+                player1Score.setText("First player's score: " + firstScore);
+                player2Score.setText("Second Player's score : " + secondScore);
+                if (!flag) {
+                    running = 2;
+                }
             }
             //if the move wasn't valid
         } else if (result == 0) {
@@ -199,8 +202,12 @@ public class GameController {
         //if the game is over, display an alert and end the game
         if (running <= 0 || numOfDisks == boardSize * boardSize) {
             if (firstScore > secondScore) {
+                Circle circle = new Circle(100, disk1);
+                gameStatus.getChildren().add(circle);
                 alert.setContentText("Player 1, You win!!!");
             } else if (secondScore > firstScore) {
+                Circle circle = new Circle(100, disk2);
+                gameStatus.getChildren().add(circle);
                 alert.setContentText("Player 2, You win!!!");
             } else {
                 alert.setContentText("It's a TIE!!!");
@@ -226,6 +233,7 @@ public class GameController {
                 currentPlayer.setText("Current Player: First");
                 currentPlayer.setTextFill(disk1);
             }
+            board.draw(logic.getPossibleMoves());
         }
     }
 

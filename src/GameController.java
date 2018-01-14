@@ -20,7 +20,7 @@ public class GameController {
     private static final int defaultBoardSize = 8;
     private static final int gameScreenWidth = 1050;
     private static final int gameScreenHeight = 700;
-    private static final int menuScreenWidth = 400;
+    private static final int menuScreenWidth = 450;
     private static final int menuScreenHeight = 350;
     private static final int labelSize = 30;
     private int boardSize;
@@ -72,17 +72,26 @@ public class GameController {
             //sets the vbox for all of the labels
             gameStatus = new VBox();
             root.setAlignment(Pos.CENTER);
-            root.setSpacing(20);
+            //root.setSpacing(20);
             gameStatus.setSpacing(30);
             setLabels();
             //adds the gridpane and the vbox to the hbox
+            root.widthProperty().addListener(((observable, oldValue, newValue) -> {
+                double boardNewWidth = newValue.doubleValue() - 420;
+                board.setPrefWidth(boardNewWidth);
+                board.draw(logic.getPossibleMoves());
+            }));
+            root.heightProperty().addListener(((observable, oldValue, newValue) -> {
+                board.setPrefHeight(newValue.doubleValue());
+                board.draw(logic.getPossibleMoves());
+            }));
             root.getChildren().addAll(board, gameStatus);
             //gets the background of the game screen
             root.setId("gamePane");
             scene = new Scene(root, gameScreenWidth, gameScreenHeight);
             scene.getStylesheets().add("gameStyle.css");
-            //draws the board
             board.draw(logic.getPossibleMoves());
+            //draws the board
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -243,8 +252,8 @@ public class GameController {
      * @return a new location.
      */
     public Location converter(double x, double y) {
-        int row = (int) x / ((gameScreenHeight - 100) / boardSize) + 1;
-        int col = (int) y / ((gameScreenHeight - 100) / boardSize) + 1;
+        int row = (int) x / ((int) board.getPrefWidth() / boardSize) + 1;
+        int col = (int) y / ((int) board.getPrefHeight() / boardSize) + 1;
         return new Location(row, col);
     }
 

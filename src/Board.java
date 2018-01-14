@@ -1,12 +1,8 @@
-import javafx.beans.value.ObservableValue;
-import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
-import javafx.stage.Stage;
-
 import java.util.List;
 
 
@@ -51,39 +47,47 @@ public class Board extends GridPane {
     public void draw(List<Location> possibleMoves) {
         //clears the drawings currently on the board.
         this.getChildren().clear();
+        int width = (int)this.getPrefWidth();
+        int height = (int)this.getPrefHeight();
+        int cellWidth = width / size;
+        int cellHeight = height / size;
+        int radius = Math.min(width, height) / 2;
         //goes over the board
         for (int i = 1; i <= size; i++) {
             for (int j = 1; j <= size; j++) {
                 //adds a rectangle as a stack pane for each cell
-                Rectangle rectangle = new Rectangle(600 / size,600 / size);
+                Rectangle rectangle = new Rectangle(cellWidth,cellHeight);
                 rectangle.setStroke(Color.BLACK);
                 rectangle.setFill(boardColor);
                 StackPane cell = new StackPane();
                 cell.getChildren().add(rectangle);
-                this.add(cell, i , j);
                 //if this cell has a disk from the first player, add a circle
                 if (table[i][j].getStatus() == 1) {
-                    this.add(new Circle(cell.getWidth()/2, cell.getHeight()/2,
-                            300/size ,disk1), i, j);
+                    Circle circle = new Circle(cell.getWidth() / 2, cellHeight,
+                            radius / size, disk1);
+                    cell.getChildren().add(circle);
+                    this.add(cell, i, j);
                     //if this cell has a disk from the second player, add a circle
                 } else if (table[i][j].getStatus() == 2) {
-                    this.add(new Circle(cell.getWidth()/2, cell.getHeight()/2,
-                            300/size ,disk2), i, j);
+                    Circle circle = new Circle(cell.getPrefWidth() / 2 , cellHeight,
+                            radius / size, disk2);
+                    cell.getChildren().add(circle);
+                    this.add(cell, i, j);
                     //checks where the possible moves are and draws an empty circle.
                 } else {
                      for (int k = 0; k < possibleMoves.size(); k++) {
                          if (possibleMoves.get(k).getRow() == table[i][j].getSpot().getRow()
                                  && possibleMoves.get(k).getCol() == table[i][j].getSpot().getCol()) {
-                             Circle possCircle = new Circle(cell.getWidth()/2, cell.getHeight()/2,
-                                     300/size, boardColor);
+                             Circle possCircle = new Circle(Math.max(cellWidth,cellHeight) / 2, cellHeight,
+                                     radius /size, boardColor);
                              possCircle.setStroke(possibleColor);
-                             this.add(possCircle, i, j);
+                             cell.getChildren().add(possCircle);
                          }
                      }
+                     this.add(cell, i, j);
                 }
             }
         }
-
     }
 
     /**

@@ -70,11 +70,16 @@ public class SettingsController {
     protected void apply(ActionEvent event) {
         boolean valid = true;
         //fills the map with values.
-        if (disk1Color.getValue().equals(Color.GRAY) || disk2Color.getValue().equals(Color.GRAY) ||
-                disk1Color.getValue() == Color.rgb(10, 91, 53) ||
-                disk2Color.getValue().equals(Color.rgb(10, 91, 53))
-                || disk1Color.getValue().equals(disk2Color.getValue())){
-            message.setText("Please pick a different color.");
+        if (disk1Color.getValue().equals(Color.GRAY)||
+                disk1Color.getValue().equals(Color.rgb(10, 91, 53)) ||
+                disk1Color.getValue().equals(disk2Color.getValue())){
+            message.setText("Player 1: Please pick a different color.");
+            message.setTextFill(Color.RED);
+            valid = false;
+        }
+        if (disk2Color.getValue().equals(Color.GRAY) ||
+                disk2Color.getValue().equals(Color.rgb(10, 91, 53))){
+            message.setText("Player 2: Please pick a different color.");
             message.setTextFill(Color.RED);
             valid = false;
         }
@@ -87,7 +92,7 @@ public class SettingsController {
                 SettingsReader reader = new SettingsReader();
                 Parent parent = FXMLLoader.load(getClass().getResource("res/menu.fxml"));
                 parent.setId("pane");
-                Scene scene = new Scene(parent, 400, 350);
+                Scene scene = new Scene(parent, 450, 350);
                 scene.getStylesheets().add("mainStyle.css");
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(scene);

@@ -21,7 +21,7 @@ public class Main extends Application {
             root.setId("pane");
             //GameController controller = loader.getController();
             //SettingsReader reader = new SettingsReader();
-            Scene scene = new Scene(root, 400, 350);
+            Scene scene = new Scene(root, 450, 350);
             scene.getStylesheets().addAll(this.getClass().getResource("mainStyle.css").toExternalForm());
             primaryStage.setTitle("Reversi");
             primaryStage.setScene(scene);

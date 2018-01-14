@@ -50,7 +50,7 @@ public class MenuController{
             SettingsReader reader = new SettingsReader();
             Parent parent = FXMLLoader.load(getClass().getResource("res/settings.fxml"));
             parent.setId("pane");
-            Scene scene = new Scene(parent, 400, 350);
+            Scene scene = new Scene(parent, 450, 350);
             scene.getStylesheets().add("mainStyle.css");
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);

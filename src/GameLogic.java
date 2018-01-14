@@ -236,7 +236,7 @@ public class GameLogic {
     public List<Location> getPossibleMoves() {
         //changed dynamically to be the options for the current
         // player's cell in the for loop.
-        List<Location> subOptions = new ArrayList<>();
+        List<Location> subOptions;
         //ultimately will store all of the options for moves.
         List<Location> options = new ArrayList<>();
         for (int i = 0; i <= board.getSize(); i++) {

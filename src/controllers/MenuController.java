@@ -1,3 +1,7 @@
+package controllers;
+
+import controllers.GameController;
+import initSettings.SettingsReader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,13 +34,14 @@ public class MenuController{
         try {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             SettingsReader reader = new SettingsReader();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("game.fxml"));
+            FXMLLoader loader = new FXMLLoader(ClassLoader.getSystemClassLoader().getResource("game.fxml"));
             Parent root = loader.load();
             GameController controller = loader.getController();
             controller.setStage(stage);
             controller.show();
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("nope");
+            //e.printStackTrace();
         }
     }
 
@@ -48,7 +53,7 @@ public class MenuController{
     protected void startSettings (ActionEvent event){
         try {
             SettingsReader reader = new SettingsReader();
-            Parent parent = FXMLLoader.load(getClass().getResource("settings.fxml"));
+            Parent parent = FXMLLoader.load(ClassLoader.getSystemClassLoader().getResource("settings.fxml"));
             parent.setId("pane");
             Scene scene = new Scene(parent, 450, 350);
             scene.getStylesheets().add("mainStyle.css");

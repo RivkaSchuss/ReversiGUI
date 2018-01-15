@@ -1,3 +1,11 @@
+package controllers;
+
+import game.Board;
+import game.GameLogic;
+import game.Location;
+import game.Type;
+import initSettings.GameSettings;
+import initSettings.SettingsReader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -288,7 +296,7 @@ public class GameController {
     protected void loadFXML(String fxml, int width, int height, ActionEvent event) {
         try {
             SettingsReader reader = new SettingsReader();
-            Parent parent = FXMLLoader.load(getClass().getResource(fxml));
+            Parent parent = FXMLLoader.load(ClassLoader.getSystemClassLoader().getResource(fxml));
             Scene scene = new Scene(parent, width, height);
             scene.getStylesheets().add("mainStyle.css");
             parent.setId("pane");

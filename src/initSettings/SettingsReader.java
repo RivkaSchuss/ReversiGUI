@@ -1,3 +1,5 @@
+package initSettings;
+
 import java.io.*;
 import java.util.Map;
 import java.util.TreeMap;
@@ -10,7 +12,7 @@ public class SettingsReader {
 
     /**
      * static function that reads from the file
-     * @return a class GameSettings with its members.
+     * @return a class initSettings.GameSettings with its members.
      */
     public static GameSettings fromReader() {
         String thisLine;

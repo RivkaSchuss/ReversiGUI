@@ -1,3 +1,7 @@
+package controllers;
+
+import initSettings.GameSettings;
+import initSettings.SettingsReader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -88,7 +92,7 @@ public class SettingsController {
             writeToFile();
             try {
                 SettingsReader reader = new SettingsReader();
-                Parent parent = FXMLLoader.load(getClass().getResource("menu.fxml"));
+                Parent parent = FXMLLoader.load(ClassLoader.getSystemClassLoader().getResource("menu.fxml"));
                 parent.setId("pane");
                 Scene scene = new Scene(parent, 450, 350);
                 scene.getStylesheets().add("mainStyle.css");

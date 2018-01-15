@@ -8,7 +8,7 @@
 
 <HBox xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="GameController"
+            fx:controller="controllers.GameController"
             fx:id="root"
             prefHeight="400.0" prefWidth="600.0">
 </HBox>

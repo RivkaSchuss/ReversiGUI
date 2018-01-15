@@ -1,6 +1,7 @@
-import javafx.scene.control.Button;
+package game;
 
-public class Cell extends Button {
+
+public class Cell {
     private int status;
     private Location spot;
 

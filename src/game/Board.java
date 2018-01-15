@@ -1,3 +1,7 @@
+package game;
+
+import game.Cell;
+import game.Location;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
